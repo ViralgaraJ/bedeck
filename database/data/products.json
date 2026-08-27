@@ -1,0 +1,738 @@
+[
+  {
+    "name": "ISOIL SBM 32 PD Meter",
+    "brand": "ISOIL",
+    "category": "Metering Equipment",
+    "image": "assets/images/products/isoil-sbm-32-pd-meter.webp",
+    "keywords": "ISOIL SBM 32 positive displacement meter custody transfer flow meter petroleum Sri Lanka",
+    "description": "High-accuracy positive displacement meter with low pressure drop and stepless calibration for a wide range of liquids. During operation the liquid drives self-lubricating vanes around the measuring chamber, reducing leakage between chambers and transmitting rotation to a mechanical register, electronic flow computer or pulse output."
+  },
+  {
+    "name": "ISOIL SBMX75 SS Meter",
+    "brand": "ISOIL",
+    "category": "Metering Equipment",
+    "image": "assets/images/products/isoil-sbmx75-ss-meter.webp",
+    "keywords": "ISOIL SBMX75 stainless steel positive displacement meter aggressive liquids chemical petrochemical Sri Lanka",
+    "description": "Stainless-steel positive displacement meter for aggressive liquids in chemical and petrochemical applications. It supports mechanical or electronic indication with high accuracy, repeatability and robust performance across wide flow ranges."
+  },
+  {
+    "name": "ISOIL BM 200 / 400 / 600 Bulk Meter",
+    "brand": "ISOIL",
+    "category": "Metering Equipment",
+    "image": "assets/images/products/isoil-bm-3-4-and-6-bulk-meter.webp",
+    "keywords": "ISOIL BM 200 BM 400 BM 600 bulk positive displacement meter custody transfer Sri Lanka",
+    "description": "BM 200, BM 400 and BM 600 positive displacement meters provide high accuracy and repeatability for bulk transfer. They can be supplied with mechanical or electronic counters and should be installed with filtration and air/gas elimination for custody-transfer quality measurement."
+  },
+  {
+    "name": "ISOIL BMV Meter Group",
+    "brand": "ISOIL",
+    "category": "Metering Equipment",
+    "image": "assets/images/products/isoil-bmv-meter-group.webp",
+    "keywords": "ISOIL BMV meter group strainer air separator loading rail tank truck Sri Lanka",
+    "description": "BMV meter groups combine ISOIL PD metering with strainer and air-separator components for tank trucks, wagon loading rails and depot transfer points. The assembly supports high accuracy, repeatability and mechanical or electronic flow-computer indication across a large flow range."
+  },
+  {
+    "name": "ISOIL LBM 1100 Meter",
+    "brand": "ISOIL",
+    "category": "Metering Equipment",
+    "image": "assets/images/products/isoil-lbm-1100-meter.webp",
+    "keywords": "ISOIL LBM 1100 positive displacement meter mechanical electronic pulse output Sri Lanka",
+    "description": "Large-capacity positive displacement meter with high accuracy and repeatability over a broad operating range. Self-lubricating vanes stay in contact with the measuring chamber and the calibration mechanism enables fine adjustment without changing gears."
+  },
+  {
+    "name": "ISOIL SBM150DEP Gravity Meter Skid",
+    "brand": "ISOIL",
+    "category": "Metering Equipment",
+    "image": "assets/images/products/isoil-sbm150dep-gravity-meter-skid.webp",
+    "keywords": "ISOIL SBM150DEP gravity meter skid unloading tank truck underground tank Sri Lanka",
+    "description": "Gravity-unloading skid with SBM 150 PD meter, strainer, balance pipe, vent pipe, trolley frame and quick couplings for tank-truck to underground-tank transfer. The design keeps the meter full, helps avoid air measurement and allows hose drainage at the end of delivery."
+  },
+  {
+    "name": "ISOIL Master Meter",
+    "brand": "ISOIL",
+    "category": "Metering Equipment",
+    "image": "assets/images/products/isoil-master-meter.webp",
+    "keywords": "ISOIL master meter calibration proving positive displacement meter loading bay pipeline Sri Lanka",
+    "description": "High-precision calibrated reference meter used to calibrate other flow meters, including PD meters in loading bays and pipeline installations. It offers a practical alternative to proving tanks, supports faster calibration by a single operator and can be trolley-mounted for movement to recovery lines or tank trucks."
+  },
+  {
+    "name": "ISOIL Refuelling Unit Marine, Aviation and Industrial",
+    "brand": "ISOIL",
+    "category": "Metering Equipment",
+    "image": "assets/images/products/isoil-refuelling-unit-marine-aviation-industrial.webp",
+    "keywords": "ISOIL refuelling unit marine aviation industrial fuel distribution metering Sri Lanka",
+    "description": "Tailor-made refuelling unit for marine, aviation and industrial fuel distribution. Devices can be assembled and wired in a stainless cabinet, with standard flow options from 160 to 700 LPM, mechanical or electronic counter with preset, safe hose and nozzle handling and automatic hose rewind options."
+  },
+  {
+    "name": "ISOIL MID Measuring System MSG9000",
+    "brand": "ISOIL",
+    "category": "Metering Equipment",
+    "image": "assets/images/products/isoil-mid-measuring-system-msg9000.webp",
+    "keywords": "ISOIL MSG9000 MID measuring system gravity unloading tank truck Sri Lanka",
+    "description": "MID-certified measuring system for tank-truck unloading into underground tanks by gravity. It combines an S9000 PD meter, EM6422 encoder, VEGA T electronic counter, strainer, air separator, pneumatic circuit and preset valve so measurement proceeds only when the meter is full and closes if air enters."
+  },
+  {
+    "name": "ISOIL Aviation Meters Series SBM and BM",
+    "brand": "ISOIL",
+    "category": "Metering Equipment",
+    "image": "assets/images/products/isoil-aviation-meters-series-sbm-bm.webp",
+    "keywords": "ISOIL aviation meters SBM BM aircraft refuelling PD meter Sri Lanka",
+    "description": "Aviation positive displacement meters in SBM and BM series sizes for fuel measurement where high accuracy and repeatability are required. They support wide flow ranges and mechanical or electronic counters for aviation refuelling duties."
+  },
+  {
+    "name": "E&H ProMass H 300 Coriolis Meter",
+    "brand": "E&H",
+    "category": "Metering Equipment",
+    "image": "assets/images/products/eandh-promass-h300-coriolis-meter.webp",
+    "keywords": "Endress Hauser E&H Promass H 300 Coriolis mass flow meter aggressive fluids Heartbeat Technology Sri Lanka",
+    "description": "Promass H 300 is a high-accuracy Coriolis meter designed for chemically aggressive fluids where corrosion resistance and operational safety matter. The compact transmitter provides one-side access, remote display options, improved connectivity and Heartbeat Technology for process safety."
+  },
+  {
+    "name": "E&H Promag P300 Electromagnetic Meter",
+    "brand": "E&H",
+    "category": "Metering Equipment",
+    "image": "assets/images/products/eandh-promag-p300-electromagnetic-meter.webp",
+    "keywords": "Endress Hauser E&H Promag P300 electromagnetic flowmeter chemical process corrosive liquids Heartbeat Technology Sri Lanka",
+    "description": "Promag P is an electromagnetic flowmeter for chemical and process applications with corrosive liquids and elevated medium temperatures. Its compact transmitter supports one-side access, remote display options, improved connectivity and Heartbeat Technology for compliance and process-safety monitoring."
+  },
+  {
+    "name": "Electromagnetic Flow Meters",
+    "brand": "General",
+    "category": "Metering Equipment",
+    "image": "assets/images/products/electromagnetic-flow-meters.webp",
+    "keywords": "electromagnetic flow meters volumetric flowmeters no moving parts Sri Lanka",
+    "description": "Volumetric flowmeters without moving parts, intended to reduce maintenance and provide accurate measurement over wide flow ranges."
+  },
+  {
+    "name": "Waltman Meters",
+    "brand": "General",
+    "category": "Metering Equipment",
+    "image": "assets/images/products/waltman-meters.webp",
+    "keywords": "Woltman water meter high flow industrial municipal irrigation Sri Lanka",
+    "description": "Woltman-type turbine water meter for high continuous water-flow measurement in large industrial, commercial, municipal and irrigation pipelines."
+  },
+  {
+    "name": "Turbine Meters",
+    "brand": "General",
+    "category": "Metering Equipment",
+    "image": "assets/images/products/turbine-meters.webp",
+    "keywords": "turbine flow meter velocity rotor pulse output pipe measurement Sri Lanka",
+    "description": "Velocity-based flow meter installed in a pipeline where flowing fluid spins a multi-bladed rotor. A magnetic sensor converts rotor movement into pulses that represent flow velocity and volume."
+  },
+  {
+    "name": "Smart Gas Meter",
+    "brand": "General",
+    "category": "Metering Equipment",
+    "image": "assets/images/products/smart-gas-meter.webp",
+    "keywords": "wireless smart gas meter remote reading Sri Lanka",
+    "description": "Wireless smart gas metering for remote readings, scheduled data uploads, revenue protection and improved management efficiency."
+  },
+  {
+    "name": "Vortex Flow Meter",
+    "brand": "General",
+    "category": "Metering Equipment",
+    "image": "assets/images/products/vortex-flow-meter.webp",
+    "keywords": "vortex flow meter liquids gases steam bluff body process measurement Sri Lanka",
+    "description": "Industrial flowmeter for liquids, gases and steam that measures flow by counting vortices created behind a bluff body in the flow stream. The vortex frequency corresponds to fluid speed and can be used for robust process measurement."
+  },
+  {
+    "name": "HYTEK ALPHA FMC FC10 Dispenser",
+    "brand": "Hytek",
+    "category": "Pumping Equipment",
+    "image": "assets/images/products/hytek-alpha-fmc-fc10-dispenser.webp",
+    "keywords": "Hytek Alpha FMC FC10 diesel dispenser fuel management Sri Lanka",
+    "description": "ATEX-certified diesel dispensing package with integrated fuel management, data tags, GPRS connectivity, reporting and transaction storage."
+  },
+  {
+    "name": "Centrifugal Pumps",
+    "brand": "General",
+    "category": "Pumping Equipment",
+    "image": "assets/images/products/centrifugal-pumps.webp",
+    "keywords": "centrifugal pumps water supply HVAC firefighting Sri Lanka",
+    "description": "Single-stage end-suction and monoblock centrifugal pumps for water supply, pressure boosting, HVAC, firefighting, utilities, chilled-water circulation and industrial use."
+  },
+  {
+    "name": "PROTECH VIKING Oil Dispenser",
+    "brand": "PROTECH",
+    "category": "Pumping Equipment",
+    "image": "assets/images/products/protech-viking-oil-dispenser.webp",
+    "keywords": "PROTECH Viking oil dispenser workshop lubricant Sri Lanka",
+    "description": "Microprocessor-based oil dispenser for workshops and industrial plants, combining metering and pneumatic pumping for lubricants and compatible fluids."
+  },
+  {
+    "name": "ISOIL FLEXIMIX Additive Injection Blocks",
+    "brand": "ISOIL",
+    "category": "Pumping Equipment",
+    "image": "assets/images/products/isoil-fleximix-additive-injection-blocks.webp",
+    "keywords": "ISOIL Fleximix additive injection dosing pump block fuel transfer terminal Sri Lanka",
+    "description": "Dosing-pump block for controlled additive injection and blending within fuel-transfer and terminal applications, supporting accurate additive handling in industrial fuel systems."
+  },
+  {
+    "name": "FLUIDWELL Basic Batch Controller",
+    "brand": "Fluidwell",
+    "category": "Electronic Devices",
+    "image": "assets/images/products/fluidwell-basic-batch-controller.webp",
+    "keywords": "Fluidwell basic batch controller Sri Lanka",
+    "description": "Basic batch-control solution for managing preset quantities and repeatable dispensing/batching operations."
+  },
+  {
+    "name": "FLUIDWELL C Series Batch Controller",
+    "brand": "Fluidwell",
+    "category": "Electronic Devices",
+    "image": "assets/images/products/fluidwell-c-series-batch-controller.webp",
+    "keywords": "Fluidwell C Series batch controller custody transfer Sri Lanka",
+    "description": "Rugged flow-computer/batch-controller platform for metrological and custody-transfer applications, including harsh and hazardous environments."
+  },
+  {
+    "name": "FLUIDWELL D Series Batch Controller",
+    "brand": "Fluidwell",
+    "category": "Electronic Devices",
+    "image": "assets/images/products/fluidwell-d-series-batch-controller.webp",
+    "keywords": "Fluidwell D Series panel mount batch controller Sri Lanka",
+    "description": "Panel-mount batch controller with preset quantity entry, repeat batches and self-learning overrun correction."
+  },
+  {
+    "name": "FLUIDWELL E110 Logger",
+    "brand": "Fluidwell",
+    "category": "Electronic Devices",
+    "image": "assets/images/products/fluidwell-e110-logger.webp",
+    "keywords": "Fluidwell E110 logger flow indicator totalizer Sri Lanka",
+    "description": "Explosion-proof flow-rate indicator/totalizer with optional flow/data logging and downloadable historical data."
+  },
+  {
+    "name": "FLUIDWELL F103 Data Logger",
+    "brand": "Fluidwell",
+    "category": "Electronic Devices",
+    "image": "assets/images/products/fluidwell-f103-data-logger.webp",
+    "keywords": "Fluidwell F103 data logger flow totalizer Sri Lanka",
+    "description": "Flow totalizer/logger for liquid and gas measurement, including accumulated totals and optional detailed event/interval logging."
+  },
+  {
+    "name": "FLUIDWELL N414 Batch Controller",
+    "brand": "Fluidwell",
+    "category": "Electronic Devices",
+    "image": "assets/images/products/fluidwell-n414-batch-controller.webp",
+    "keywords": "Fluidwell N414 batch controller legal for trade Sri Lanka",
+    "description": "Legal-for-trade batch controller with keypad operation, receipt printing, multiple display values and rugged panel-mount construction."
+  },
+  {
+    "name": "ISOIL VEGA T Flow Computer",
+    "brand": "ISOIL",
+    "category": "Electronic Devices",
+    "image": "assets/images/products/isoil-vega-t-flow-computer.webp",
+    "keywords": "ISOIL VEGA T flow computer road tanker refueller Sri Lanka",
+    "description": "Vehicle-oriented flow computer for road tank trucks, aviation dispensers and refuellers, supporting multiple meters, products, presets, temperature compensation and communications."
+  },
+  {
+    "name": "ISOIL VEGA 3 Calculator",
+    "brand": "ISOIL",
+    "category": "Electronic Devices",
+    "image": "assets/images/products/isoil-vega-3-calculator.webp",
+    "keywords": "ISOIL VEGA 3 calculator loading arm blending Sri Lanka",
+    "description": "Multi-stream, multi-meter calculator/indicator for measuring systems handling liquids other than water, including blending and loading-arm configurations."
+  },
+  {
+    "name": "ISOIL MT40 Grounding System",
+    "brand": "ISOIL",
+    "category": "Electronic Devices",
+    "image": "assets/images/products/isoil-mt40-grounding-system.webp",
+    "keywords": "ISOIL MT40 grounding system tank truck loading Sri Lanka",
+    "description": "Grounding safety system intended to control electrostatic-charge risks during loading/unloading of tank trucks, rail tankers, IBCs, drums and bulk containers."
+  },
+  {
+    "name": "ISOIL EM6422 Pulse Emitter",
+    "brand": "ISOIL",
+    "category": "Electronic Devices",
+    "image": "assets/images/products/isoil-em6422-pulse-emitter.webp",
+    "keywords": "ISOIL EM6422 pulse emitter PD meter flow computer Sri Lanka",
+    "description": "Leak-resistant pulse emitter connecting positive displacement meters to electronic flow computers, with pulse and CAN-bus transmission variants."
+  },
+  {
+    "name": "ISOIL SBR Human Interface Device",
+    "brand": "ISOIL",
+    "category": "Electronic Devices",
+    "image": "assets/images/products/isoil-sbr-human-interface-device.webp",
+    "keywords": "ISOIL SBR badge reader terminal loading Sri Lanka",
+    "description": "ATEX/IECEx contactless badge reader for driver identification and access/control functions in oil-terminal loading areas."
+  },
+  {
+    "name": "ACCORD Forecourt Controller",
+    "brand": "ACCORD",
+    "category": "Electronic Devices",
+    "image": "assets/images/products/accord-forecourt-controller.webp",
+    "keywords": "ACCORD forecourt controller dispenser integration Sri Lanka",
+    "description": "Forecourt control platform acting as the central controller for dispenser integration, tag/card devices and non-volatile transaction processing."
+  },
+  {
+    "name": "ACCORD Tag Reader",
+    "brand": "ACCORD",
+    "category": "Electronic Devices",
+    "image": "assets/images/products/accord-tag-reader.webp",
+    "keywords": "ACCORD tag reader vehicle identification Sri Lanka",
+    "description": "Vehicle identification/tag-reading device with optional keypad inputs and RS-485 integration with the forecourt controller."
+  },
+  {
+    "name": "ISOIL ISOVALVE",
+    "brand": "ISOIL",
+    "category": "Valves",
+    "image": "assets/images/products/isoil-isovalve.webp",
+    "keywords": "ISOIL ISOVALVE automatic valve solenoid diaphragm petroleum chemical loading terminal Sri Lanka",
+    "description": "Automatic control valve using the pressure of the process fluid and a diaphragm-operated shutter. It is typically installed downstream of the meter in tank-truck loading terminals or transfer pipelines for petroleum and chemical products, with operation controlled through normally open and normally closed Ex solenoid valves."
+  },
+  {
+    "name": "ISOIL DBB Valve",
+    "brand": "ISOIL",
+    "category": "Valves",
+    "image": "assets/images/products/isoil-dbb-valve.webp",
+    "keywords": "ISOIL DBB ISOSEAL double seal valve fiscal control custody transfer Sri Lanka",
+    "description": "ISOSEAL double-seal valve for fiscal-control duties, built with an external flanged body and internal spherical shutter. Closing pressure acts on two seal rings for progressive shut-off, while seal-control ball valves and a red position flag support verification, bleeding and locked-closed control."
+  },
+  {
+    "name": "ISOIL Preset Valve",
+    "brand": "ISOIL",
+    "category": "Valves",
+    "image": "assets/images/products/isoil-preset-valve.webp",
+    "keywords": "ISOIL preset valve MPV flow meter predetermined delivery batching Sri Lanka",
+    "description": "Preset valve for accurate automatic control of a predetermined quantity delivered through a flow meter. The MPV preset valve is installed at the flow-meter outlet and linked to the preset register, allowing two-stage closure at the end of delivery."
+  },
+  {
+    "name": "Hytek Brass Angle Check Valve For Diesel and Petrol With Pressure Relief",
+    "brand": "Hytek",
+    "category": "Valves",
+    "image": "assets/images/products/hytek-brass-angle-check-valve.webp",
+    "keywords": "Hytek brass angle check valve diesel petrol pressure relief fuel suction line Sri Lanka",
+    "description": "Hytek-approved brass angle check valve assembled in-house for diesel and petrol suction lines. It helps prevent fuel-line drainage and pressure loss in pumps and dispensers, supporting equipment longevity while providing integrated pressure relief."
+  },
+  {
+    "name": "Hytek Ridart Pressure Regulating Anti-Syphon Valve For Diesel/HVO",
+    "brand": "Hytek",
+    "category": "Valves",
+    "image": "assets/images/products/hytek-ridart-pressure-regulating-anti-syphon-valve.webp",
+    "keywords": "Hytek Ridart anti syphon pressure regulating valve diesel HVO ATEX above ground tank Sri Lanka",
+    "description": "Ridart pressure-regulating anti-syphon valve for diesel and HVO above-ground tank installations. Made in Italy and ATEX certified, it helps prevent tanks emptying if pump or pipework is damaged, supports environmental protection and can be adjusted to suit tank height and head pressure up to 3.4 bar."
+  },
+  {
+    "name": "Hytek Solenoid Valves for Dispensers",
+    "brand": "Hytek",
+    "category": "Valves",
+    "image": "assets/images/products/hytek-solenoid-valves-for-dispensers.webp",
+    "keywords": "Hytek solenoid valve dispenser fuel control overshoot accuracy Sri Lanka",
+    "description": "Solenoid valves for fuel dispensers used to improve fuelling accuracy and reduce overshoot. The electric coil creates a magnetic field that opens or closes the valve, controlling fluid flow during dispensing operations."
+  },
+  {
+    "name": "UFLOW Pilot Operated Diaphragm Valve",
+    "brand": "UFLOW",
+    "category": "Valves",
+    "image": "assets/images/products/uflow-pilot-operated-diaphragm-valve.webp",
+    "keywords": "UFLOW pilot operated diaphragm valve SS316L food pharmaceutical chemical corrosive Sri Lanka",
+    "description": "Pilot-operated diaphragm valve with SS316L-equivalent internal parts for food, pharmaceutical, chemical and corrosive applications. It supports easy coil changes, manual override, IP65/IP67/IP68 enclosure options, power-saving coils and water-hammer reduction."
+  },
+  {
+    "name": "UFLOW Ball Valves",
+    "brand": "UFLOW",
+    "category": "Valves",
+    "image": "assets/images/products/uflow-ball-valves.webp",
+    "keywords": "UFLOW three piece ball valve full port actuator ISO 5211 Sri Lanka",
+    "description": "Three-piece twin-seal full-port ball valve with blow-out-proof stem, floating ball, ISO 5211 mounting pad and lever, gear or actuator operation. Precision mirror-finished balls and low-torque design support bubble-tight shutoff."
+  },
+  {
+    "name": "UFLOW Gate Valve",
+    "brand": "UFLOW",
+    "category": "Valves",
+    "image": "assets/images/products/uflow-gate-valve.webp",
+    "keywords": "UFLOW gate valve industrial isolation Sri Lanka",
+    "description": "Industrial isolation valve product listed with bidirectional sealing, actuator mounting and multiple flange/pressure standards."
+  },
+  {
+    "name": "UFLOW Limit Switch",
+    "brand": "UFLOW",
+    "category": "Valves",
+    "image": "assets/images/products/uflow-limit-switch.webp",
+    "keywords": "UFLOW compact limit switch valve position indicator transparent cover M20 NPT Sri Lanka",
+    "description": "Compact valve-position limit switch with open/close indication visible from all directions, transparent cover, M20 or 1/2-inch NPT cable entries, adjustable serrated cam and optional stainless bracket."
+  },
+  {
+    "name": "UFLOW Angle Seat Valve",
+    "brand": "UFLOW",
+    "category": "Valves",
+    "image": "assets/images/products/uflow-angle-seat-valve.webp",
+    "keywords": "UFLOW angle seat valve pneumatic piston steam vacuum high temperature zero differential Sri Lanka",
+    "description": "Two-way pneumatically actuated angle-seat piston valve for liquids, gases, steam, vacuum, aggressive fluids, high temperature and zero-differential applications. The angled seat gives high flow capacity with low pressure loss and can use single- or double-acting actuators."
+  },
+  {
+    "name": "UFLOW Pneumatic Tie Rod Cylinders",
+    "brand": "UFLOW",
+    "category": "Valves",
+    "image": "assets/images/products/uflow-angle-seat-valve.webp",
+    "keywords": "UFLOW pneumatic tie rod cylinder compressed air automation packaging manufacturing Sri Lanka",
+    "description": "Pneumatic tie-rod cylinder that converts compressed air into linear or rotary motion for automation, packaging and manufacturing systems. Options include adjustable cushioning at both ends, wide mounting choices, high-temperature Viton seals up to 150C, stainless piston rod and SS304 lock nut."
+  },
+  {
+    "name": "UFLOW Pneumatic Operated Wafer Type Butterfly Valve - PN16",
+    "brand": "UFLOW",
+    "category": "Valves",
+    "image": "assets/images/products/uflow-pneumatic-operated-wafer-type-butterfly-valve.webp",
+    "keywords": "UFLOW pneumatic wafer butterfly valve PN16 ISO 5211 API609 ASME Sri Lanka",
+    "description": "Pneumatically operated wafer butterfly valve for bidirectional zero-leakage service. It includes ISO actuator mounting, double-D drive, dual stem sealing, ASME flange compatibility and production testing against ISO 5211, API609 and ASME requirements."
+  },
+  {
+    "name": "UFLOW Roto Seal Coupling",
+    "brand": "UFLOW",
+    "category": "Valves",
+    "image": "assets/images/products/uflow-ball-valves.webp",
+    "keywords": "UFLOW roto seal coupling rotary union air water oil gas BSP NPT Sri Lanka",
+    "description": "Roto seal coupling with high-performance bearings and seals for air, water, oil and gas media. Available with dual connections, BSP or NPT ports from 1/4 inch to 2 inch, operating pressure up to 10 bar, Viton seals from -10C to 180C and speeds up to 1000 RPM."
+  },
+  {
+    "name": "UFLOW Pulse Jet Angle Type Dust Collector Valve",
+    "brand": "UFLOW",
+    "category": "Valves",
+    "image": "assets/images/products/uflow-pulse-jet-angle-type-dust-collector-valve.webp",
+    "keywords": "UFLOW pulse jet angle dust collector valve IP65 IP67 IP68 Sri Lanka",
+    "description": "Pulse-jet angle-type dust-collector valve designed for reliable service with easy coil changes, lockable or free coil rotation, IP65/IP67/IP68 enclosure options, power-saving coil options and optional brass silencer."
+  },
+  {
+    "name": "UFLOW Medical Oxygen Regulator",
+    "brand": "UFLOW",
+    "category": "Valves",
+    "image": "assets/images/products/uflow-medical-oxygen-regulator.webp",
+    "keywords": "UFLOW medical oxygen regulator humidifier brass pressure relief Sri Lanka",
+    "description": "Medical oxygen regulator with humidifier, brass body, ergonomic inlet handwheel, flow control, zero-stop function and preset pressure relief above 180 bar for clean and controlled oxygen delivery."
+  },
+  {
+    "name": "E&H FMP55 Guided Radar Level",
+    "brand": "E&H",
+    "category": "Level Measurement",
+    "image": "assets/images/products/eandh-fmp55-guided-radar-level.webp",
+    "keywords": "E&H FMP55 guided radar level interface measurement Sri Lanka",
+    "description": "Guided-radar level/interface measurement solution combining radar and capacitance principles for demanding process applications."
+  },
+  {
+    "name": "E&H Cerbar MPM75 Transmitter",
+    "brand": "E&H",
+    "category": "Pressure Measurement",
+    "image": "assets/images/products/eandh-cerbar-mpm75-transmitter.webp",
+    "keywords": "E&H Cerbar MPM75 pressure transmitter level measurement Sri Lanka",
+    "description": "Digital pressure transmitter with metal diaphragm seal for pressure, level, volume or mass measurement at high pressure and extreme temperatures."
+  },
+  {
+    "name": "E&H Deltabar PMD75 Differential Pressure Transmitter",
+    "brand": "E&H",
+    "category": "Pressure Measurement",
+    "image": "assets/images/products/eandh-deltabar-pmd75-differential-pressure-transmitter.webp",
+    "keywords": "E&H Deltabar PMD75 differential pressure transmitter Sri Lanka",
+    "description": "Differential pressure transmitter for continuous liquid, vapour and gas measurement, with integrated parameter storage and safety-system suitability."
+  },
+  {
+    "name": "Excel Weatherproof Differential Pressure Switch",
+    "brand": "Excel Instruments",
+    "category": "Pressure Measurement",
+    "image": "assets/images/products/excel-weatherproof-differential-pressure-switch.webp",
+    "keywords": "Excel weatherproof differential pressure switch Sri Lanka",
+    "description": "Weatherproof diaphragm differential-pressure switch for filter monitoring, boilers, furnaces, engines, oil and gas, power and other industrial processes."
+  },
+  {
+    "name": "Excel Low Pressure Digital Pressure / Differential Pressure Gauge",
+    "brand": "Excel Instruments",
+    "category": "Pressure Measurement",
+    "image": "assets/images/products/excel-low-pressure-digital-pressure-differential-pressure-gauge.webp",
+    "keywords": "Excel low pressure digital differential pressure gauge Sri Lanka",
+    "description": "Microcontroller-based low-pressure digital gauge with backlit display, zeroing and peak-pressure measurement functions."
+  },
+  {
+    "name": "Excel Single Diaphragm Type Differential Pressure Gauge",
+    "brand": "Excel Instruments",
+    "category": "Pressure Measurement",
+    "image": "assets/images/products/excel-single-diaphragm-type-differential-pressure-gauge.webp",
+    "keywords": "Excel single diaphragm differential pressure gauge Sri Lanka",
+    "description": "Stainless-steel diaphragm differential-pressure gauge for clean air, compatible gases and many process-industry applications."
+  },
+  {
+    "name": "Excel Bourdon Type Pressure Gauges",
+    "brand": "Excel Instruments",
+    "category": "Pressure Measurement",
+    "image": "assets/images/products/excel-bourdon-type-pressure-gauges.webp",
+    "keywords": "Excel Bourdon pressure gauges Sri Lanka",
+    "description": "Rugged pressure gauges with stainless-steel case, brass measuring system and dry or liquid-filled configurations."
+  },
+  {
+    "name": "Excel Digital Pressure Gauge",
+    "brand": "Excel Instruments",
+    "category": "Pressure Measurement",
+    "image": "assets/images/products/excel-digital-pressure-gauge.webp",
+    "keywords": "Excel digital pressure gauge calibration Sri Lanka",
+    "description": "High-accuracy microcontroller-based digital pressure gauge for pressure/vacuum measurement and calibration work."
+  },
+  {
+    "name": "Excel Low Pressure Gauges",
+    "brand": "Excel Instruments",
+    "category": "Pressure Measurement",
+    "image": "assets/images/products/excel-low-pressure-gauges.webp",
+    "keywords": "Excel low pressure gauges clean air gas Sri Lanka",
+    "description": "Stainless-steel capsule-type gauges for low-pressure measurement in clean air, gases and low-viscosity non-corrosive media."
+  },
+  {
+    "name": "Excel Diaphragm Seal & Gauge",
+    "brand": "Excel Instruments",
+    "category": "Pressure Measurement",
+    "image": "assets/images/products/excel-diaphragm-seal-and-gauge.webp",
+    "keywords": "Excel diaphragm seal and gauge Sri Lanka",
+    "description": "Compact stainless-steel pressure gauge with integrated diaphragm seal for corrosive, viscous, sediment-laden or hot process fluids."
+  },
+  {
+    "name": "Excel Electrical Contact Type Pressure Gauges",
+    "brand": "Excel Instruments",
+    "category": "Pressure Measurement",
+    "image": "assets/images/products/excel-electrical-contact-type-pressure-gauges.webp",
+    "keywords": "Excel electrical contact pressure gauges Sri Lanka",
+    "description": "Pressure gauges with electrical contacts for controlling compressors, pumps, motors and related industrial equipment."
+  },
+  {
+    "name": "Excel Special Pressure Gauges",
+    "brand": "Excel Instruments",
+    "category": "Pressure Measurement",
+    "image": "assets/images/products/excel-special-pressure-gauges.webp",
+    "keywords": "Excel special mud pressure gauges petroleum drilling Sri Lanka",
+    "description": "Rugged diaphragm-operated mud-pressure gauges for oil, coal, well-drilling and petroleum applications."
+  },
+  {
+    "name": "ACCORD ATG Probe",
+    "brand": "ACCORD",
+    "category": "Level Measurement",
+    "image": "assets/images/products/accord-atg-probe.webp",
+    "keywords": "ACCORD ATG probe automatic tank gauging Sri Lanka",
+    "description": "Automatic tank-gauging probe for product and water levels, delivery capture, leak detection and reconciliation reporting."
+  },
+  {
+    "name": "HYTEK OLE Products",
+    "brand": "Hytek",
+    "category": "Level Measurement",
+    "image": "assets/images/products/hytek-ole-products.webp",
+    "keywords": "Hytek OLE remote liquid level monitoring Sri Lanka",
+    "description": "Remote liquid-level monitoring and instrumentation solutions with design, sourcing, supply, installation and online support."
+  },
+  {
+    "name": "HYTEK OLE T4020/T5020 Level Gauge",
+    "brand": "Hytek",
+    "category": "Level Measurement",
+    "image": "assets/images/products/hytek-ole-t4020-t5020-level-gauge.webp",
+    "keywords": "Hytek OLE T4020 T5020 ATEX level gauge Sri Lanka",
+    "description": "ATEX level gauge for fuels and related liquids with digital display, multiple power options, analogue output and Modbus connectivity."
+  },
+  {
+    "name": "Excel Level Gauge Tubular",
+    "brand": "Excel Instruments",
+    "category": "Level Measurement",
+    "image": "assets/images/products/excel-level-gauge-tubular.webp",
+    "keywords": "Excel tubular level gauge tank Sri Lanka",
+    "description": "Tubular level gauge mounted parallel to tanks, with isolation/vent/drain functions and protective guard construction."
+  },
+  {
+    "name": "HYTEK Overfill Alarms",
+    "brand": "Hytek",
+    "category": "Level Measurement",
+    "image": "assets/images/products/hytek-overfill-alarms.webp",
+    "keywords": "Hytek overfill alarms low level bund alarm Sri Lanka",
+    "description": "Overfill, low-level and bund alarm solutions for preventing spills, protecting equipment and supporting timely refill actions."
+  },
+  {
+    "name": "HYTEK Apollo Ultrasonic Gauge",
+    "brand": "Hytek",
+    "category": "Level Measurement",
+    "image": "assets/images/products/hytek-apollo-ultrasonic-gauge.webp",
+    "keywords": "Hytek Apollo ultrasonic oil level gauge Sri Lanka",
+    "description": "Wireless ultrasonic oil-level gauge sending tank level to an indoor receiver; suitable for a range of fuel types."
+  },
+  {
+    "name": "HYTEK Watchman Sonic Level Gauge",
+    "brand": "Hytek",
+    "category": "Level Measurement",
+    "image": "assets/images/products/hytek-watchman-sonic-level-gauge.webp",
+    "keywords": "Hytek Watchman sonic level gauge Sri Lanka",
+    "description": "Wireless sonic tank-level gauge with indoor display and low-level refill indication."
+  },
+  {
+    "name": "Excel RTD Assembly with Screw/Flange Connection",
+    "brand": "Excel Instruments",
+    "category": "Temperature Measurement",
+    "image": "assets/images/products/excel-rtd-assembly-with-screw-flange-connection.webp",
+    "keywords": "Excel RTD assembly screw flange temperature Sri Lanka",
+    "description": "RTD temperature assembly with spring-loaded design, multiple connections and compatibility with thermowells/protection tubes."
+  },
+  {
+    "name": "E&H TR15 Thermometer",
+    "brand": "E&H",
+    "category": "Temperature Measurement",
+    "image": "assets/images/products/eandh-tr15-thermometer.webp",
+    "keywords": "E&H TR15 industrial thermometer Sri Lanka",
+    "description": "Industrial thermometer for demanding gas, steam, chemical, oil and gas and energy applications, with optional transmitter."
+  },
+  {
+    "name": "Excel All SS Industrial Bi-Metal Dial Thermometer",
+    "brand": "Excel Instruments",
+    "category": "Temperature Measurement",
+    "image": "assets/images/products/excel-all-ss-industrial-bi-metal-dial-thermometer.webp",
+    "keywords": "Excel stainless steel bimetal dial thermometer Sri Lanka",
+    "description": "Stainless-steel bimetal dial thermometer with multiple mounting styles, optional filling/thermowell and broad process-industry use."
+  },
+  {
+    "name": "Excel Digital Temperature Gauge",
+    "brand": "Excel Instruments",
+    "category": "Temperature Measurement",
+    "image": "assets/images/products/excel-digital-temperature-gauge.webp",
+    "keywords": "Excel digital temperature gauge RTD thermocouple Sri Lanka",
+    "description": "Microcontroller digital temperature gauge with rigid or capillary sensing options and broad RTD/thermocouple ranges."
+  },
+  {
+    "name": "E&H Cerbar PMC51 Pressure Transmitter",
+    "brand": "E&H",
+    "category": "Pressure Measurement",
+    "image": "assets/images/products/eandh-cerbar-pmc51-pressure-transmitter.webp",
+    "keywords": "E&H Cerbar PMC51 pressure transmitter Sri Lanka",
+    "description": "Digital ceramic-cell pressure transmitter for hygienic/process pressure, level, volume or mass measurement in liquids and gases."
+  },
+  {
+    "name": "ISOIL Automation Solutions",
+    "brand": "ISOIL",
+    "category": "Software / Automation Systems",
+    "image": "assets/images/products/isoil-automation-solutions.webp",
+    "keywords": "ISOIL terminal automation depot refinery Sri Lanka",
+    "description": "Terminal automation solutions for depots/refineries, including loading automation, access, tank supervision, pump management, host interfaces and transaction data."
+  },
+  {
+    "name": "PROTECH Building Management Systems",
+    "brand": "PROTECH",
+    "category": "Software / Automation Systems",
+    "image": "assets/images/products/protech-building-management-systems.webp",
+    "keywords": "PROTECH building management systems BMS Sri Lanka",
+    "description": "Building/facility management systems for monitoring and controlling HVAC, lighting, energy-consuming systems, fire and safety equipment."
+  },
+  {
+    "name": "PROTECH Energy Management Systems",
+    "brand": "PROTECH",
+    "category": "Software / Automation Systems",
+    "image": "assets/images/products/protech-energy-management-systems.webp",
+    "keywords": "PROTECH energy management systems EMS Sri Lanka",
+    "description": "Energy-management approach based on metering, data collection, identifying savings opportunities, implementing improvements and tracking performance."
+  },
+  {
+    "name": "ACCORD Fuel Management Systems",
+    "brand": "ACCORD",
+    "category": "Software / Automation Systems",
+    "image": "assets/images/products/accord-fuel-management-systems.webp",
+    "keywords": "ACCORD fuel management systems pump tank automation Sri Lanka",
+    "description": "Pump and tank automation system supporting sales, stock, pricing, shift, attendant and customer management with historical records."
+  },
+  {
+    "name": "HYTEK Electric Vehicle Charger",
+    "brand": "Hytek",
+    "category": "Accessories",
+    "image": "assets/images/products/hytek-electric-vehicle-charger.webp",
+    "keywords": "Hytek electric vehicle charger Type 1 Type 2 Sri Lanka",
+    "description": "Electric-vehicle charging solutions including Type 1 and Type 2 charging options for commercial and other installations."
+  },
+  {
+    "name": "Hytek Charging Leads",
+    "brand": "Hytek",
+    "category": "Accessories",
+    "image": "assets/images/products/hytek-charging-leads.webp",
+    "keywords": "Hytek EV charging leads Type 1 Type 2 Sri Lanka",
+    "description": "Type 1 and Type 2 EV charging leads with common vehicle compatibility, multiple lengths and certified connector systems."
+  },
+  {
+    "name": "PROTECH Bearing Tester",
+    "brand": "PROTECH",
+    "category": "Accessories",
+    "image": "assets/images/products/protech-bearing-tester.webp",
+    "keywords": "PROTECH bearing tester condition monitoring Sri Lanka",
+    "description": "Portable microprocessor-based bearing-condition tester using shock/echo pulse methods and colour-coded condition indication."
+  },
+  {
+    "name": "PROTECH Tyre Inflator",
+    "brand": "PROTECH",
+    "category": "Accessories",
+    "image": "assets/images/products/protech-tyre-inflator.webp",
+    "keywords": "PROTECH tyre inflator deflator Sri Lanka",
+    "description": "Automatic microprocessor-based tyre inflator/deflator designed for accurate pressure setting and reduced compressed-air waste."
+  },
+  {
+    "name": "PROTECH Belt Alignment Kit",
+    "brand": "PROTECH",
+    "category": "Accessories",
+    "image": "assets/images/products/protech-belt-alignment-kit.webp",
+    "keywords": "PROTECH belt alignment kit laser pulley Sri Lanka",
+    "description": "Laser-based pulley and belt-alignment tool that displays vertical and horizontal misalignment for one-person adjustment."
+  },
+  {
+    "name": "ISOIL DV Gas Separator",
+    "brand": "ISOIL",
+    "category": "Accessories",
+    "image": "assets/images/products/isoil-dv-gas-separator.webp",
+    "keywords": "ISOIL DV gas separator custody transfer meters Sri Lanka",
+    "description": "Centrifugal gas separator used upstream of meters to remove gas/air and protect measurement accuracy in custody-transfer systems."
+  },
+  {
+    "name": "Excel Flame Proof Diaphragm Type Pressure Switch",
+    "brand": "Excel Instruments",
+    "category": "Pressure Measurement",
+    "image": "assets/images/products/excel-flame-proof-diaphragm-type-pressure-switch.webp",
+    "keywords": "Excel flame proof diaphragm pressure switch Sri Lanka",
+    "description": "Flameproof diaphragm pressure switch with adjustable set point, IP67 protection and applications across oil/gas, power, marine and process industries."
+  },
+  {
+    "name": "Excel Direct Coupled Type Diaphragm Seal",
+    "brand": "Excel Instruments",
+    "category": "Accessories",
+    "image": "assets/images/products/excel-direct-coupled-type-diaphragm-seal.webp",
+    "keywords": "Excel direct coupled diaphragm seal Sri Lanka",
+    "description": "Stainless-steel two-piece diaphragm seal isolating pressure instruments from corrosive, viscous, sediment-laden or high-temperature process media."
+  },
+  {
+    "name": "Excel SS Siphon",
+    "brand": "Excel Instruments",
+    "category": "Accessories",
+    "image": "assets/images/products/excel-ss-siphon.webp",
+    "keywords": "Excel stainless steel siphon pressure instruments Sri Lanka",
+    "description": "Stainless-steel pigtail/coil/U-type siphons used to protect pressure instruments from high-temperature media and process pulsation."
+  },
+  {
+    "name": "Excel Cooling Tower Stainless Steel Construction",
+    "brand": "Excel Instruments",
+    "category": "Accessories",
+    "image": "assets/images/products/excel-cooling-tower-stainless-steel-construction.webp",
+    "keywords": "Excel cooling tower stainless steel pressure instrument Sri Lanka",
+    "description": "Stainless-steel cooling/condensing arrangement intended to protect pressure instruments from high-temperature process fluids or vapours."
+  },
+  {
+    "name": "Steel Pipes",
+    "brand": "General",
+    "category": "MEP Items",
+    "image": "assets/images/products/steel-pipes.webp",
+    "keywords": "steel pipes carbon steel pipe supply Sri Lanka MEP",
+    "description": "Carbon-steel pipe supply in multiple grades, sizes and schedules for structural, steam, water, petroleum and related service."
+  },
+  {
+    "name": "Power Control Panels",
+    "brand": "General",
+    "category": "MEP Items",
+    "image": "assets/images/products/power-control-panels.webp",
+    "keywords": "power control panels MCC generator synchronizing Sri Lanka",
+    "description": "Custom power distribution and control panels including generator control/synchronizing, power-factor correction, MCC and process-control systems."
+  },
+  {
+    "name": "Steel Fittings",
+    "brand": "General",
+    "category": "MEP Items",
+    "image": "assets/images/products/steel-fittings.webp",
+    "keywords": "steel fittings carbon mild steel flanges Sri Lanka",
+    "description": "Matching carbon/mild-steel fittings and flanges across multiple standards, connection types, sizes and grades."
+  },
+  {
+    "name": "Vastu Consultation",
+    "brand": "Bedeck",
+    "category": "Vastu Remedies / Consultation",
+    "image": "assets/images/products/vastu-consultation.webp",
+    "keywords": "Vastu consultation Sri Lanka property house workplace",
+    "description": "Vastu evaluation service covering property selection, building plans, energy balancing and remedial recommendations."
+  }
+]
