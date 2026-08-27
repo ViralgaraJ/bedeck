@@ -42,10 +42,10 @@ class InstallController extends Controller
         Artisan::call('config:cache');
         $log[] = 'config:cache → '.trim(Artisan::output());
 
-        $body = "<pre style=\"font:14px/1.5 ui-monospace,monospace;padding:24px\">"
+        $body = '<pre style="font:14px/1.5 ui-monospace,monospace;padding:24px">'
             .e(implode("\n\n", array_filter($log)))
             ."\n\n──────────\nInstall complete. Now remove SETUP_TOKEN from .env,"
-            ." then load the site.</pre>";
+            .' then load the site.</pre>';
 
         return response($body, 200);
     }

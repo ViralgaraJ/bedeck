@@ -37,6 +37,7 @@ class Product extends Model
         while (static::where('slug', $slug)->when($ignoreId, fn ($q) => $q->where('id', '!=', $ignoreId))->exists()) {
             $slug = $base.'-'.$i++;
         }
+
         return $slug;
     }
 
@@ -59,6 +60,7 @@ class Product extends Model
         if (Str::startsWith($this->image, ['http://', 'https://'])) {
             return $this->image;
         }
+
         return asset($this->image);
     }
 
@@ -71,6 +73,7 @@ class Product extends Model
         if (Str::startsWith($path, ['http://', 'https://'])) {
             return $path;
         }
+
         return asset($path);
     }
 

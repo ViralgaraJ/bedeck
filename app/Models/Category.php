@@ -33,6 +33,7 @@ class Category extends Model
         while (static::where('slug', $slug)->when($ignoreId, fn ($q) => $q->where('id', '!=', $ignoreId))->exists()) {
             $slug = $base.'-'.$i++;
         }
+
         return $slug;
     }
 

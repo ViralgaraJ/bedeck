@@ -14,6 +14,7 @@ class ProductSeeder extends Seeder
         $path = database_path('data/products.json');
         if (! is_file($path)) {
             $this->command->warn("products.json not found at {$path}");
+
             return;
         }
 

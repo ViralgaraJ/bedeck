@@ -22,9 +22,13 @@ use RuntimeException;
 class ProductImageService
 {
     public const MIN_SIZE = 600;
+
     public const FULL_SIZE = 1200;
+
     public const THUMB_SIZE = 600;
+
     public const MAX_BYTES = 4 * 1024 * 1024;
+
     public const ACCEPT = ['jpg', 'jpeg', 'png', 'webp'];
 
     /** Relative directory under /public. */
@@ -86,6 +90,7 @@ class ProductImageService
         if (! $img instanceof \GdImage) {
             throw new RuntimeException('Unsupported or corrupt image file.');
         }
+
         return $img;
     }
 
@@ -96,6 +101,7 @@ class ProductImageService
         $white = imagecolorallocate($dst, 255, 255, 255);
         imagefilledrectangle($dst, 0, 0, $size, $size, $white);
         imagecopyresampled($dst, $src, 0, 0, $sx, $sy, $size, $size, $side, $side);
+
         return $dst;
     }
 }

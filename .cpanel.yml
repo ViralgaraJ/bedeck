@@ -1,0 +1,37 @@
+---
+# cPanel → Git Version Control → "Deploy HEAD Commit" runs these tasks.
+# cPanel clones this repo to  ~/repositories/<name>  and runs from there.
+#
+# EDIT the two exports below for your account, then commit:
+#   DEPLOYPATH = where the live app lives (point the domain's Document Root at $DEPLOYPATH/public)
+#   PHP        = full path to the PHP CLI for your selected version (see cPanel "MultiPHP Manager")
+#
+# This route needs Composer available on the host. If `composer` is not on PATH,
+# replace it with:  $PHP ~/composer.phar   (upload composer.phar to your home dir once).
+
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/CPANELUSER/bedeck
+    - export PHP=/opt/cpanel/ea-php83/root/usr/bin/php
+    - /bin/mkdir -p "$DEPLOYPATH"
+    - >-
+      /usr/bin/rsync -a --delete
+      --exclude='.git' --exclude='.github' --exclude='.cpanel.yml'
+      --exclude='.env' --exclude='node_modules' --exclude='tests'
+      --exclude='storage/logs/*'
+      --exclude='storage/framework/cache/data/*'
+      --exclude='storage/framework/sessions/*'
+      --exclude='storage/framework/views/*'
+      --exclude='bootstrap/cache/*'
+      --exclude='public/uploads/products/*'
+      --exclude='public/uploads/datasheets/*'
+      ./ "$DEPLOYPATH/"
+    - cd "$DEPLOYPATH" && composer install --no-dev --optimize-autoloader --no-interaction --no-progress
+    - cd "$DEPLOYPATH" && test -f .env || cp .env.example .env
+    - cd "$DEPLOYPATH" && "$PHP" artisan key:generate --force --no-interaction || true
+    - cd "$DEPLOYPATH" && "$PHP" artisan migrate --force
+    - cd "$DEPLOYPATH" && "$PHP" artisan storage:link || true
+    - cd "$DEPLOYPATH" && "$PHP" artisan optimize:clear
+    - cd "$DEPLOYPATH" && "$PHP" artisan config:cache
+    - cd "$DEPLOYPATH" && "$PHP" artisan route:cache
+    - cd "$DEPLOYPATH" && "$PHP" artisan view:cache

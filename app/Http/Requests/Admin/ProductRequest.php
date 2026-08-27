@@ -47,6 +47,7 @@ class ProductRequest extends FormRequest
                     $size = @getimagesize($value->getRealPath());
                     if (! $size) {
                         $fail('The product photo could not be read.');
+
                         return;
                     }
                     [$w, $h] = $size;

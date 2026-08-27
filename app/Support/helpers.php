@@ -10,7 +10,7 @@ if (! function_exists('setting')) {
     {
         try {
             return SiteSetting::get($key, $default);
-        } catch (\Throwable) {
+        } catch (Throwable) {
             return $default;
         }
     }
