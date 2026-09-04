@@ -5,17 +5,11 @@
 
 @section('content')
 @include('partials.page-hero', [
-    'eyebrow' => 'Products',
+    'eyebrow' => 'Product Category',
     'heading' => $category->name,
-    'text' => $category->description,
+    'text' => $category->description ?: 'Explore our range of high-quality '.$category->name.' supplied by Bedeck International.',
     'image' => 'assets/images/site/page-products-01.webp',
 ])
-
-<nav class="breadcrumb">
-    <a href="{{ route('home') }}">Home</a><span>/</span>
-    <a href="{{ route('products.index') }}">Products</a><span>/</span>
-    <span>{{ $category->name }}</span>
-</nav>
 
 @include('partials.catalog', [
     'products' => $products,

@@ -5,13 +5,11 @@
 
 @section('content')
 @include('partials.page-hero', [
-    'eyebrow' => 'Products',
-    'heading' => 'Product Catalogue',
-    'text' => 'The catalogue is organized by category so engineering buyers can move quickly to the correct product group.',
+    'eyebrow' => 'Catalogue',
+    'heading' => 'Industrial Products & Systems',
+    'text' => 'Browse our range of 92 specialized instruments, metering units, valves, transmitters, and engineering solutions.',
     'image' => 'assets/images/site/page-products-01.webp',
 ])
-
-<nav class="breadcrumb"><a href="{{ route('home') }}">Home</a><span>/</span><span>Products</span></nav>
 
 @include('partials.catalog', [
     'products' => $products,
