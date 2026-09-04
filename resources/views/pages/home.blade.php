@@ -12,7 +12,11 @@
                 <div data-hero-photo style="background-image:url('{{ asset($img) }}')"></div>
             @endforeach
         </div>
-        <div class="hero__video" data-hero-video="{{ setting('hero_video_id', 'fdYHkgcxuiw') }}"></div>
+        <div class="hero__video is-on">
+            <video autoplay loop muted playsinline preload="auto">
+                <source src="{{ asset('assets/videos/hero-bg.mp4') }}" type="video/mp4">
+            </video>
+        </div>
         <div class="hero__scrim"></div>
     </div>
     <canvas class="hero__canvas" id="hero-canvas" aria-hidden="true"></canvas>
@@ -53,7 +57,7 @@
     <div style="margin-top:1.6rem" data-reveal><a class="button secondary dark" href="{{ route('services') }}">View Services</a></div>
 </section>
 
-{{-- ============ FEATURED PRODUCTS ============ --}}
+{{-- ============ FEATURED PRODUCTS (Disabled - Uncomment to restore) ============
 @if($featured->count())
 <section class="section muted">
     <div class="section-heading" data-reveal><p class="eyebrow">Featured</p>
@@ -66,6 +70,7 @@
     </div>
 </section>
 @endif
+--}}
 
 {{-- ============ WHY BEDECK ============ --}}
 <section class="split">

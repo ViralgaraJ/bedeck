@@ -150,8 +150,14 @@
   function startVideo() {
     if (videoStarted || montageStarted) return;
     if (!videoBox || reduce) return;
-    videoStarted = true;
+    if (videoBox.querySelector("video")) {
+      videoStarted = true;
+      videoBox.classList.add("is-on");
+      return;
+    }
     var vid = videoBox.getAttribute("data-hero-video");
+    if (!vid) return;
+    videoStarted = true;
     var params = [
       "autoplay=1", "mute=1", "controls=0", "loop=1", "playlist=" + vid,
       "playsinline=1", "modestbranding=1", "rel=0", "iv_load_policy=3",

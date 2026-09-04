@@ -255,10 +255,9 @@ p { margin: 0 0 1rem; }
 
 .hero__video { position: absolute; inset: 0; opacity: 0; transition: opacity 1.6s ease; overflow: hidden; }
 .hero__video.is-on { opacity: 1; }
-.hero__video iframe {
-  /* Overscan ~16% and centre so YouTube's title/branding chrome is cropped off-screen */
+.hero__video video, .hero__video iframe {
   position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-  width: 132vw; height: 74.25vw; min-height: 132vh; min-width: 234.7vh;
+  min-width: 100%; min-height: 100%; width: 100vw; height: 100vh; object-fit: cover;
   border: 0; pointer-events: none;
 }
 .hero__scrim {
