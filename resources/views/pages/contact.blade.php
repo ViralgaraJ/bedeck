@@ -37,10 +37,14 @@
                 </div>
             @endif
 
-            <label>Name <input name="name" value="{{ old('name') }}" autocomplete="name" required></label>
-            <label>Email <input type="email" name="email" value="{{ old('email') }}" autocomplete="email" required></label>
-            <label>Company <input name="company" value="{{ old('company') }}" autocomplete="organization"></label>
-            <label>Phone <input name="phone" value="{{ old('phone') }}" autocomplete="tel"></label>
+            <div class="form-row">
+                <label>Name * <input name="name" value="{{ old('name') }}" autocomplete="name" placeholder="Your full name" required></label>
+                <label>Email * <input type="email" name="email" value="{{ old('email') }}" autocomplete="email" placeholder="name@company.com" required></label>
+            </div>
+            <div class="form-row">
+                <label>Company <input name="company" value="{{ old('company') }}" autocomplete="organization" placeholder="Company / Organization"></label>
+                <label>Phone <input name="phone" value="{{ old('phone') }}" autocomplete="tel" placeholder="+94 77 000 0000"></label>
+            </div>
             <label>Product of interest
                 <select name="product_id">
                     <option value="">— General enquiry —</option>

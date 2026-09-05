@@ -507,6 +507,8 @@ address a { color: var(--ink); text-decoration: none; }
 address a:hover { color: var(--c-sky); }
 
 .contact-form { display: grid; gap: .95rem; padding: 1.6rem; border-radius: var(--radius); background: rgba(8, 10, 20, .55); border: 1px solid var(--glass-border); }
+.form-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: .95rem; }
+@media (max-width: 640px) { .form-row { grid-template-columns: 1fr; } }
 .contact-form label { display: grid; gap: .4rem; font-family: var(--font-display); font-weight: 500; font-size: .8rem; color: var(--muted); }
 input, textarea, select {
   width: 100%; min-height: 48px; border-radius: 12px; padding: .75rem .9rem; font: inherit;
