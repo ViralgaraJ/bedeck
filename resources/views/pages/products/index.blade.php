@@ -5,10 +5,10 @@
 
 @section('content')
 @include('partials.page-hero', [
+    'pageKey' => 'products',
     'eyebrow' => 'Catalogue',
     'heading' => 'Industrial Products & Systems',
     'text' => 'Browse our range of 92 specialized instruments, metering units, valves, transmitters, and engineering solutions.',
-    'image' => 'assets/images/site/page-products-01.webp',
 ])
 
 @include('partials.catalog', [

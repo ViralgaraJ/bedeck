@@ -5,10 +5,10 @@
 
 @section('content')
 @include('partials.page-hero', [
+    'pageKey' => 'partners',
     'eyebrow' => 'Partners',
     'heading' => 'International brand references we represent.',
     'text' => 'Bedeck International sources equipment through a portfolio of international suppliers and principal partners.',
-    'image' => 'assets/images/site/page-partners-01.webp',
 ])
 
 <section class="section">

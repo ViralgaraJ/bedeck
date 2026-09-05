@@ -5,10 +5,10 @@
 
 @section('content')
 @include('partials.page-hero', [
+    'pageKey' => 'about',
     'eyebrow' => 'About',
     'heading' => 'Multi-disciplinary engineering consulting from Sri Lanka.',
     'text' => 'Bedeck International provides products and services for a wide range of industrial needs, supported by technical experience and international product references.',
-    'image' => 'assets/images/site/page-about-01.webp',
 ])
 
 <section class="split">

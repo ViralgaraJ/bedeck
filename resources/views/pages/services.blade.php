@@ -5,10 +5,10 @@
 
 @section('content')
 @include('partials.page-hero', [
+    'pageKey' => 'services',
     'eyebrow' => 'Services',
     'heading' => 'Engineering services and equipment supplies for industrial and building requirements.',
     'text' => 'Bedeck International supports petroleum, process, MEP, EMS, BMS, FMS and Vastu consultation requirements across Sri Lanka.',
-    'image' => 'assets/images/site/page-services-01.webp',
 ])
 
 <div class="services-intro">

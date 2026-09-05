@@ -5,10 +5,10 @@
 
 @section('content')
 @include('partials.page-hero', [
+    'pageKey' => 'contact',
     'eyebrow' => 'Contact',
     'heading' => 'Request product sourcing, quotation or engineering consultation.',
     'text' => 'Use WhatsApp, email or the enquiry form to contact Bedeck International about industrial equipment and engineering requirements.',
-    'image' => 'assets/images/site/page-contact-01.webp',
 ])
 
 <section class="section">

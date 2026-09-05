@@ -5,10 +5,10 @@
 
 @section('content')
 @include('partials.page-hero', [
+    'pageKey' => 'products',
     'eyebrow' => 'Product Category',
     'heading' => $category->name,
     'text' => $category->description ?: 'Explore our range of high-quality '.$category->name.' supplied by Bedeck International.',
-    'image' => 'assets/images/site/page-products-01.webp',
 ])
 
 @include('partials.catalog', [
