@@ -20,6 +20,7 @@
         <a class="nav-link {{ $is('admin.dashboard') }}" href="{{ route('admin.dashboard') }}">Dashboard</a>
         <a class="nav-link {{ $is('admin.products.*') }}" href="{{ route('admin.products.index') }}">Products</a>
         <a class="nav-link {{ $is('admin.categories.*') }}" href="{{ route('admin.categories.index') }}">Categories</a>
+        <a class="nav-link {{ $is('admin.partners.*') }}" href="{{ route('admin.partners.index') }}">Partners</a>
         <a class="nav-link {{ $is('admin.enquiries.*') }}" href="{{ route('admin.enquiries.index') }}">
             Enquiries
             @php($unread = \App\Models\Enquiry::where('is_read', false)->count())

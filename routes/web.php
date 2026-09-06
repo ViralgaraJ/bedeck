@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EnquiryController;
 use App\Http\Controllers\Admin\LoginController;
+use App\Http\Controllers\Admin\PartnerController as AdminPartnerController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\InstallController;
@@ -45,6 +46,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         Route::resource('products', AdminProductController::class)->except('show');
         Route::resource('categories', AdminCategoryController::class)->except('show');
+        Route::resource('partners', AdminPartnerController::class)->except('show');
 
         Route::get('enquiries', [EnquiryController::class, 'index'])->name('enquiries.index');
         Route::get('enquiries/{enquiry}', [EnquiryController::class, 'show'])->name('enquiries.show');

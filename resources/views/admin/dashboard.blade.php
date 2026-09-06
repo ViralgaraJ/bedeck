@@ -10,7 +10,7 @@
     <div class="stat"><b>{{ $productCount }}</b><span>Products ({{ $activeCount }} active)</span></div>
     <div class="stat"><b>{{ $featuredCount }}</b><span>Featured products</span></div>
     <div class="stat"><b>{{ $categoryCount }}</b><span>Categories</span></div>
-    <div class="stat"><b>{{ $partnerCount }}</b><span>Partners</span></div>
+    <a href="{{ route('admin.partners.index') }}" class="stat" style="text-decoration:none"><b>{{ $partnerCount }}</b><span>Partners ↗</span></a>
     <div class="stat"><b>{{ $unreadEnquiries }}</b><span>Unread enquiries</span></div>
 </div>
 
