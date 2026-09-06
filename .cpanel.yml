@@ -1,14 +1,15 @@
 ---
+# cPanel Git Version Control deploy tasks.
+# Runs in-place: this repo's working copy IS bedeck.viralgaraj.com's doc root parent
+# (Document Root = .../bedeck.viralgaraj.com/public), so no rsync/DEPLOYPATH needed.
+#
+# NOTE: task lines that begin with a variable must be quoted as a whole string,
+# otherwise the YAML parser rejects "$PHP" followed by bare text.
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/viralgar/staging-2-bedeck.viralgaraj.com
-    - export PHP=/usr/local/bin/ea-php82
-    - cd $DEPLOYPATH
+    - /usr/local/bin/ea-php82 /usr/local/bin/composer install --no-dev --optimize-autoloader --no-interaction --no-progress
     - test -f .env || cp .env.example .env
-    - $PHP artisan storage:link || true
-    - $PHP artisan migrate --force
-    - $PHP artisan optimize:clear
-    - $PHP artisan config:cache
-    - $PHP artisan route:cache
-    - $PHP artisan view:cache
-
+    - /usr/local/bin/ea-php82 artisan storage:link || true
+    - /usr/local/bin/ea-php82 artisan migrate --force
+    - /usr/local/bin/ea-php82 artisan optimize:clear
+    - /usr/local/bin/ea-php82 artisan config:cache
