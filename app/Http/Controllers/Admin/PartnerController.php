@@ -33,12 +33,17 @@ class PartnerController extends Controller
         $data = $this->validatePartner($request);
 
         if ($request->hasFile('logo_file')) {
-            $data['logo'] = $this->storeLogo($request->file('logo_file'), $data['name']);
+            $data['logo'] = $this->storeLogo(
+                $request->file('logo_file'),
+                $data['name']
+            );
         }
 
         Partner::create($data);
 
-        return redirect()->route('admin.partners.index')->with('success', 'Partner added successfully.');
+        return redirect()
+            ->route('admin.partners.index')
+            ->with('success', 'Partner added successfully.');
     }
 
     public function edit(Partner $partner): View
@@ -52,21 +57,31 @@ class PartnerController extends Controller
 
         if ($request->hasFile('logo_file')) {
             $this->deleteCustomLogo($partner->logo);
-            $data['logo'] = $this->storeLogo($request->file('logo_file'), $data['name']);
+
+            $data['logo'] = $this->storeLogo(
+                $request->file('logo_file'),
+                $data['name']
+            );
         }
 
         $partner->update($data);
 
-        return redirect()->route('admin.partners.index')->with('success', 'Partner updated successfully.');
+        return redirect()
+            ->route('admin.partners.index')
+            ->with('success', 'Partner updated successfully.');
     }
 
     public function destroy(Partner $partner): RedirectResponse
     {
         $this->deleteCustomLogo($partner->logo);
+
         $name = $partner->name;
+
         $partner->delete();
 
-        return redirect()->route('admin.partners.index')->with('success', "Partner \"{$name}\" deleted successfully.");
+        return redirect()
+            ->route('admin.partners.index')
+            ->with('success', "Partner \"{$name}\" deleted successfully.");
     }
 
     private function validatePartner(Request $request): array
@@ -75,8 +90,18 @@ class PartnerController extends Controller
             'name' => ['required', 'string', 'max:150'],
             'country' => ['nullable', 'string', 'max:100'],
             'website' => ['nullable', 'string', 'max:255', 'url'],
-            'logo_file' => ['nullable', 'image', 'mimes:jpeg,png,jpg,webp,svg', 'max:2048'],
-            'sort_order' => ['nullable', 'integer', 'min:0', 'max:9999'],
+            'logo_file' => [
+                'nullable',
+                'image',
+                'mimes:jpeg,png,jpg,webp,svg',
+                'max:2048',
+            ],
+            'sort_order' => [
+                'nullable',
+                'integer',
+                'min:0',
+                'max:9999',
+            ],
             'is_active' => ['sometimes', 'boolean'],
         ]);
 
@@ -89,20 +114,23 @@ class PartnerController extends Controller
     private function storeLogo($file, string $name): string
     {
         $dir = public_path('uploads/partners');
+
         if (! is_dir($dir)) {
             mkdir($dir, 0755, true);
         }
 
-        $filename = Str::slug($name) . '-' . time() . '.' . $file->getClientOriginalExtension();
+        $filename = Str::slug($name).'-'.time().'.'.$file->getClientOriginalExtension();
+
         $file->move($dir, $filename);
 
-        return 'uploads/partners/' . $filename;
+        return 'uploads/partners/'.$filename;
     }
 
     private function deleteCustomLogo(?string $path): void
     {
         if ($path && Str::startsWith($path, 'uploads/partners/')) {
             $absPath = public_path($path);
+
             if (is_file($absPath)) {
                 @unlink($absPath);
             }
