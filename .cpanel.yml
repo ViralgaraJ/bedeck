@@ -9,7 +9,7 @@
 ---
 deployment:
   tasks:
-    - export PHP=/usr/local/bin/ea-php84
+    - export PHP=/usr/local/bin/ea-php82
     - export COMPOSER=/usr/local/bin/composer
     - '"$COMPOSER" install --no-dev --optimize-autoloader --no-interaction --no-progress'
     - test -f .env || cp .env.example .env
