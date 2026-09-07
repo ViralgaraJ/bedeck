@@ -5,11 +5,8 @@
     </div>
     <div class="nav-shell">
         <a class="brand" href="{{ route('home') }}" aria-label="{{ setting('company_name', 'Bedeck International') }} home">
-            <img src="{{ asset('assets/optimized/bedeck-logo.webp') }}" alt="{{ setting('company_name', 'Bedeck International') }} logo" width="46" height="46">
             <span class="brand-copy">
-                <span class="brand-name">
-                    @foreach(explode(' ', setting('company_name', 'Bedeck International')) as $part)<span>{{ strtoupper($part) }}</span>@endforeach
-                </span>
+                <img src="{{ asset('assets/optimized/bedeck-logo2.jpg') }}" alt="{{ setting('company_name', 'Bedeck International') }} logo" class="brand-logo-img">
                 <span class="brand-consultants">{{ strtoupper(setting('company_role', 'Engineering Consultants')) }}</span>
             </span>
         </a>

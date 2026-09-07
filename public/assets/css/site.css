@@ -220,7 +220,8 @@ p { margin: 0 0 1rem; }
   margin-top: .3rem; padding-inline: 1.1rem;
 }
 .brand { display: inline-flex; align-items: center; gap: .8rem; text-decoration: none; min-width: 0; }
-.brand img { width: 46px; height: 46px; object-fit: contain; padding: 5px;
+.brand img.brand-logo-img { width: auto; height: 42px; max-height: 42px; object-fit: contain; padding: 0; background: transparent; border-radius: 6px; border: none; box-shadow: drop-shadow(0 2px 8px rgba(0,0,0,0.5)); }
+.brand img:not(.brand-logo-img) { width: 46px; height: 46px; object-fit: contain; padding: 5px;
   background: #fff; border-radius: 12px; border: 1px solid rgba(255, 255, 255, .6);
   box-shadow: 0 8px 20px -8px rgba(0, 0, 0, .45), 0 0 0 1px rgba(59, 130, 246, .12); }
 .brand-copy { display: block; line-height: 1; }

@@ -36,9 +36,12 @@
             </div>
             <h3>{{ $service->title }}</h3>
             <p>{{ $service->body ?: $service->summary }}</p>
-            <a class="text-link" href="{{ route('products.index') }}">Browse related products &rarr;</a>
         </article>
     @endforeach
+</div>
+
+<div class="services-cta" style="text-align: center; margin: -1rem auto 4rem;" data-reveal>
+    <a class="button primary" href="{{ route('products.index') }}">Browse All Products &rarr;</a>
 </div>
 
 @include('partials.contact-cta')
