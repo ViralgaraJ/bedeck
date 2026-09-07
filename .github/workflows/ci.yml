@@ -52,6 +52,20 @@ jobs:
       - name: Migrate + seed
         run: php artisan migrate --force --seed
 
+      # ----------------------------------------
+      # Laravel Pint
+      # ----------------------------------------
+
+      - name: Pint auto-fix
+        run: vendor/bin/pint
+
+      - name: Pint style check
+        run: vendor/bin/pint --test
+
+      # ----------------------------------------
+      # Laravel cache verification
+      # ----------------------------------------
+
       - name: Verify production caches build
         run: |
           php artisan config:cache
@@ -59,8 +73,9 @@ jobs:
           php artisan view:cache
           php artisan optimize:clear
 
-      - name: Code style
-        run: vendor/bin/pint --test
+      # ----------------------------------------
+      # PHPUnit
+      # ----------------------------------------
 
       - name: PHPUnit
         run: php artisan test
