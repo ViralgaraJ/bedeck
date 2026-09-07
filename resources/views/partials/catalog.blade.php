@@ -9,7 +9,7 @@
                 <circle cx="11" cy="11" r="8"></circle>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
-            <input type="search" name="q" value="{{ $q }}" placeholder="Search 92 products by name, model, brand or keyword…" aria-label="Search products">
+            <input type="search" name="q" value="{{ $q }}" placeholder="Search products by name, model, brand or keyword…" aria-label="Search products">
             @if($q)
                 <a href="{{ $action ?? route('products.index') }}" class="search-clear" title="Clear search">&times;</a>
             @endif
@@ -20,12 +20,12 @@
     {{-- Category Pills --}}
     <div class="chip-row">
         <a class="chip {{ $activeCategory ? '' : 'is-active' }}" href="{{ route('products.index', array_filter(['q' => $q])) }}">
-            All Products <span class="n">{{ $categories->sum('products_count') }}</span>
+            All Products
         </a>
         @foreach($categories as $category)
             <a class="chip {{ $activeCategory && $activeCategory->id === $category->id ? 'is-active' : '' }}"
                href="{{ route('products.category', array_filter(['category' => $category->slug, 'q' => $q])) }}">
-                {{ $category->name }} <span class="n">{{ $category->products_count }}</span>
+                {{ $category->name }}
             </a>
         @endforeach
     </div>
@@ -33,9 +33,15 @@
     {{-- Results Summary Bar --}}
     <div class="catalog-summary-bar">
         <p class="catalog-count">
-            <strong>{{ $products->total() }}</strong> {{ \Illuminate\Support\Str::plural('product', $products->total()) }} available
-            @if($activeCategory) in <span>{{ $activeCategory->name }}</span> @endif
-            @if($q) matching “<strong>{{ $q }}</strong>” @endif
+            @if($activeCategory && $q)
+                Showing products in <span>{{ $activeCategory->name }}</span> matching “<strong>{{ $q }}</strong>”
+            @elseif($activeCategory)
+                Showing products in <span>{{ $activeCategory->name }}</span>
+            @elseif($q)
+                Showing products matching “<strong>{{ $q }}</strong>”
+            @else
+                Showing products
+            @endif
         </p>
         @if($activeCategory || $q)
             <a href="{{ route('products.index') }}" class="reset-filter-link">Reset filters &times;</a>

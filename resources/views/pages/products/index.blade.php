@@ -8,7 +8,7 @@
     'pageKey' => 'products',
     'eyebrow' => 'Catalogue',
     'heading' => 'Industrial Products & Systems',
-    'text' => 'Browse our range of 92 specialized instruments, metering units, valves, transmitters, and engineering solutions.',
+    'text' => 'Browse our range of specialized instruments, metering units, valves, transmitters, and engineering solutions.',
 ])
 
 @include('partials.catalog', [

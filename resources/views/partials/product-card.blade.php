@@ -5,6 +5,5 @@
     <div class="product-content">
         <span class="k">{{ $product->brand ?: 'Bedeck' }} @if($product->category) · {{ $product->category->name }} @endif</span>
         <strong>{{ $product->name }}</strong>
-        <p>{{ \Illuminate\Support\Str::limit($product->short_description ?: $product->description, 96) }}</p>
     </div>
 </a>
