@@ -128,60 +128,59 @@
     frame();
   }
 
-  /* ============ 2. HERO BACKGROUND — YouTube video (desktop) / photo montage (fallback) ============ */
-  var videoBox = document.querySelector("[data-hero-video]");
+  /* ============ 2. HERO BACKGROUND CAROUSEL ============ */
   var photos = Array.prototype.slice.call(document.querySelectorAll("[data-hero-photo]"));
-  var montageStarted = false, videoStarted = false;
+  var dotsBox = document.querySelector("[data-hero-dots]");
+  var montageStarted = false;
+  var pi = 0;
+  var carouselTimer = null;
+
+  function goToHeroSlide(index) {
+    if (!photos.length) return;
+    photos[pi].classList.remove("is-active");
+    if (dotsBox && dotsBox.children[pi]) {
+      dotsBox.children[pi].classList.remove("is-active");
+    }
+    pi = (index + photos.length) % photos.length;
+    photos[pi].classList.add("is-active");
+    if (dotsBox && dotsBox.children[pi]) {
+      dotsBox.children[pi].classList.add("is-active");
+    }
+  }
+
+  function startHeroTimer() {
+    if (photos.length > 1 && !reduce) {
+      carouselTimer = setInterval(function () {
+        goToHeroSlide(pi + 1);
+      }, 4500);
+    }
+  }
 
   function startMontage() {
     if (montageStarted || !photos.length) return;
     montageStarted = true;
     photos[0].classList.add("is-active");
-    if (photos.length > 1 && !reduce) {
-      var pi = 0;
-      setInterval(function () {
-        photos[pi].classList.remove("is-active");
-        pi = (pi + 1) % photos.length;
-        photos[pi].classList.add("is-active");
-      }, 5000);
+
+    if (dotsBox && photos.length > 1) {
+      dotsBox.innerHTML = "";
+      photos.forEach(function (_, idx) {
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "hero__dot" + (idx === 0 ? " is-active" : "");
+        btn.setAttribute("aria-label", "Go to slide " + (idx + 1));
+        btn.addEventListener("click", function () {
+          clearInterval(carouselTimer);
+          goToHeroSlide(idx);
+          startHeroTimer();
+        });
+        dotsBox.appendChild(btn);
+      });
     }
+
+    startHeroTimer();
   }
 
-  function startVideo() {
-    if (videoStarted || montageStarted) return;
-    if (!videoBox || reduce) return;
-    if (videoBox.querySelector("video")) {
-      videoStarted = true;
-      videoBox.classList.add("is-on");
-      return;
-    }
-    var vid = videoBox.getAttribute("data-hero-video");
-    if (!vid) return;
-    videoStarted = true;
-    var params = [
-      "autoplay=1", "mute=1", "controls=0", "loop=1", "playlist=" + vid,
-      "playsinline=1", "modestbranding=1", "rel=0", "iv_load_policy=3",
-      "disablekb=1", "fs=0", "cc_load_policy=0"
-    ].join("&");
-    var iframe = document.createElement("iframe");
-    iframe.src = "https://www.youtube-nocookie.com/embed/" + vid + "?" + params;
-    iframe.title = "Background video";
-    iframe.setAttribute("frameborder", "0");
-    iframe.setAttribute("tabindex", "-1");
-    iframe.setAttribute("aria-hidden", "true");
-    iframe.allow = "autoplay; encrypted-media; picture-in-picture";
-    iframe.addEventListener("load", function () {
-      setTimeout(function () { videoBox.classList.add("is-on"); }, 500);
-    });
-    videoBox.appendChild(iframe);
-  }
-
-  // Poster frame immediately so the hero is never blank.
-  if (photos.length) photos[0].classList.add("is-active");
-  // Prefer the video everywhere; the montage only kicks in for reduced-motion users.
-  startVideo();
-  window.addEventListener("load", startVideo);
-  setTimeout(function () { if (!videoStarted) startMontage(); }, 1400);
+  startMontage();
 
   /* ============ 3. HEADLINE WORD SPLIT ============ */
   var h1 = document.querySelector("[data-hero-heading]");

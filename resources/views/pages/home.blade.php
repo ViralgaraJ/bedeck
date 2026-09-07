@@ -12,12 +12,8 @@
                 <div data-hero-photo style="background-image:url('{{ asset($img) }}')"></div>
             @endforeach
         </div>
-        <div class="hero__video is-on">
-            <video autoplay loop muted playsinline preload="auto">
-                <source src="{{ asset('assets/videos/hero-bg.mp4') }}" type="video/mp4">
-            </video>
-        </div>
         <div class="hero__scrim"></div>
+        <div class="hero__dots" data-hero-dots></div>
     </div>
     <canvas class="hero__canvas" id="hero-canvas" aria-hidden="true"></canvas>
     <div class="hero__inner">

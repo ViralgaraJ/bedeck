@@ -52,7 +52,7 @@ jobs:
           echo "DB_DATABASE=$(pwd)/database/database.sqlite" >> .env
           touch database/database.sqlite
 
-      - name: Migrate + seed (SQLite)
+      - name: Migrate + seed
         run: php artisan migrate --force --seed
 
       - name: Verify production caches build
@@ -62,7 +62,7 @@ jobs:
           php artisan view:cache
           php artisan optimize:clear
 
-      - name: Code style (Pint)
+      - name: Code style
         run: vendor/bin/pint --test
 
       - name: PHPUnit
