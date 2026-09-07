@@ -6,10 +6,12 @@
 # NOTE: task lines that begin with a variable must be quoted as a whole string,
 # otherwise the YAML parser rejects "$PHP" followed by bare text.
 ---
+---
 deployment:
   tasks:
     - export PHP=/usr/local/bin/ea-php84
-    - composer install --no-dev --optimize-autoloader --no-interaction --no-progress
+    - export COMPOSER=/usr/local/bin/composer
+    - '"$COMPOSER" install --no-dev --optimize-autoloader --no-interaction --no-progress'
     - test -f .env || cp .env.example .env
     - '"$PHP" artisan storage:link || true'
     - '"$PHP" artisan migrate --force'
