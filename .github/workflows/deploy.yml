@@ -1,0 +1,42 @@
+name: Deploy to cPanel
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Deploy to cPanel
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger cPanel deployment
+        env:
+          CPANEL_HOST: ultra40-b.lhws.net
+          CPANEL_USERNAME: viralgar
+          CPANEL_API_TOKEN: ${{ secrets.CPANEL_API_TOKEN }}
+          REPOSITORY_ROOT: /home/viralgar/staging-2-bedeck.viralgaraj.com
+        run: |
+          set -e
+
+          echo "Triggering cPanel deployment..."
+
+          RESPONSE=$(curl -sS \
+            --fail-with-body \
+            -H "Authorization: cpanel ${CPANEL_USERNAME}:${CPANEL_API_TOKEN}" \
+            "https://${CPANEL_HOST}:2083/execute/VersionControlDeployment/create?repository_root=$(python3 -c 'import urllib.parse, os; print(urllib.parse.quote(os.environ["REPOSITORY_ROOT"], safe=""))')")
+
+          echo "$RESPONSE"
+
+          echo "$RESPONSE" | grep -q '"result"' || {
+            echo "::error::cPanel deployment API did not return a valid result."
+            exit 1
+          }
+
+          echo "cPanel deployment request submitted successfully."

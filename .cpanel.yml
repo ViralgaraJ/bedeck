@@ -8,11 +8,10 @@
 ---
 deployment:
   tasks:
-    - export PHP=/usr/local/bin/ea-php82
-    - export COMPOSER=/usr/local/bin/composer
-    - $COMPOSER install --no-dev --optimize-autoloader --no-interaction --no-progress
+    - export PHP=/usr/local/bin/ea-php84
+    - composer install --no-dev --optimize-autoloader --no-interaction --no-progress
     - test -f .env || cp .env.example .env
-    - $PHP artisan storage:link || true
-    - $PHP artisan migrate --force
-    - $PHP artisan optimize:clear
-    - $PHP artisan config:cache
+    - '"$PHP" artisan storage:link || true'
+    - '"$PHP" artisan migrate --force'
+    - '"$PHP" artisan optimize:clear'
+    - '"$PHP" artisan config:cache'
