@@ -34,8 +34,8 @@ jobs:
 
           echo "$RESPONSE"
 
-          echo "$RESPONSE" | grep -q '"result"' || {
-            echo "::error::cPanel deployment API did not return a valid result."
+          python3 -c 'import json,sys; payload=json.loads(sys.argv[1]); sys.exit(0 if payload.get("status") == 1 else 1)' "$RESPONSE" || {
+            echo "::error::cPanel deployment API did not report success."
             exit 1
           }
 
