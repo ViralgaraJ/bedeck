@@ -89,7 +89,7 @@ class PartnerController extends Controller
     private function storeLogo($file, string $name): string
     {
         $dir = public_path('uploads/partners');
-        if (!is_dir($dir)) {
+        if (! is_dir($dir)) {
             mkdir($dir, 0755, true);
         }
 
