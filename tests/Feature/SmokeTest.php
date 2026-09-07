@@ -69,7 +69,7 @@ class SmokeTest extends TestCase
 
         $this->post(route('admin.login.attempt'), [
             'email' => $admin->email,
-            'password' => 'ChangeMe!2010', // AdminUserSeeder default (no ADMIN_PASSWORD in test env)
+            'password' => env('ADMIN_PASSWORD', 'ChangeMe!2010'),
         ])->assertRedirect(route('admin.dashboard'));
 
         $this->actingAs($admin)->get('/admin')->assertOk();
