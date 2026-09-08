@@ -30,32 +30,13 @@ class ProductRequest extends FormRequest
             'is_active' => ['sometimes', 'boolean'],
             'sort_order' => ['nullable', 'integer', 'min:0', 'max:99999'],
 
-            // Product photo — square-ish, min 600x600, recommended 1200x1200, max 4 MB.
-            // It is centre-cropped to a perfect square and re-encoded as WEBP on save.
+            // Product photo — accepts JPG, PNG, WEBP, GIF up to 12 MB.
+            // System automatically fits/crops, centers, resizes and converts to 1200x1200 and 600x600 WEBP.
             'image' => [
                 $this->isMethod('post') && ! $this->filled('keep_image') ? 'required' : 'nullable',
                 File::image()
                     ->types(ProductImageService::ACCEPT)
                     ->max(ProductImageService::MAX_BYTES / 1024),
-                Rule::dimensions()
-                    ->minWidth(ProductImageService::MIN_SIZE)
-                    ->minHeight(ProductImageService::MIN_SIZE),
-                function (string $attribute, mixed $value, \Closure $fail) {
-                    if (! $value) {
-                        return;
-                    }
-                    $size = @getimagesize($value->getRealPath());
-                    if (! $size) {
-                        $fail('The product photo could not be read.');
-
-                        return;
-                    }
-                    [$w, $h] = $size;
-                    $ratio = $w / max($h, 1);
-                    if ($ratio < 0.8 || $ratio > 1.25) {
-                        $fail('The product photo should be roughly square (between 4:5 and 5:4). It will be centre-cropped to 1:1.');
-                    }
-                },
             ],
 
             'datasheet' => ['nullable', 'file', 'mimes:pdf', 'max:10240'],
@@ -65,10 +46,8 @@ class ProductRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'image.dimensions' => 'The product photo must be at least '
-                .ProductImageService::MIN_SIZE.' x '.ProductImageService::MIN_SIZE
-                .' px. 1200 x 1200 px square is recommended.',
             'image.required' => 'A product photo is required.',
+            'image.max' => 'The product photo must not be larger than 12 MB.',
         ];
     }
 

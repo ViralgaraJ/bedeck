@@ -63,12 +63,11 @@
 <div class="card">
     <h2 style="margin-top:0">Product photo</h2>
     <p style="color:#64727a;margin-top:0">
-        <strong>Upload spec:</strong> JPG, PNG or WEBP · <strong>square (1:1)</strong> ·
-        minimum <strong>600 × 600 px</strong> · recommended <strong>1200 × 1200 px</strong> · max 4 MB.
-        The image is centre-cropped and saved automatically as <code>1200×1200</code> and <code>600×600</code> WEBP.
+        <strong>Smart Auto-Processing:</strong> JPG, PNG, WEBP or GIF · max 12 MB.<br>
+        Upload any photo size, shape, or orientation. The system automatically centers, fits/crops, and converts your image into optimized <code>1200×1200</code> and <code>600×600</code> WEBP files.
     </p>
     <div class="img-drop">
-        <input type="file" name="image" accept="image/jpeg,image/png,image/webp" data-image-input {{ isset($method) ? '' : 'required' }}>
+        <input type="file" name="image" accept="image/jpeg,image/png,image/webp,image/gif" data-image-input {{ isset($method) ? '' : 'required' }}>
         @if($product->image)
             <input type="hidden" name="keep_image" value="1">
             <img class="preview on" src="{{ $product->image_url }}" alt="current image" data-image-preview>

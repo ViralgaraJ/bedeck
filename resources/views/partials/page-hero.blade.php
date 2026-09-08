@@ -6,55 +6,47 @@
 
 @php($pageImageMap = [
     'about' => [
-        'assets/images/pages/20160526_132916.jpg',
-        'assets/images/pages/Turnaround-Support-Instrumentation-TM.jpg',
-        'assets/images/pages/fundamentals_measurement1.jpg',
-        'assets/images/pages/extra-03799935.jpg',
-        'assets/images/pages/istockphoto-494128660-612x612.jpg',
+        'assets/images/pages/software.webp',
+        'assets/images/pages/BLOG_gas-station.jpg',
+        'assets/images/pages/LA-IT-Services-1.jpg',
+        'assets/images/pages/unnamed.jpg',
     ],
     'services' => [
-        'assets/images/pages/BLOG_gas-station.jpg',
-        'assets/images/pages/Future-of-Petroleum-Automation.jpg',
-        'assets/images/pages/HotelEnergyManagement1.jpg',
-        'assets/images/pages/bms1.png',
-        'assets/images/pages/20160526_132916.jpg',
+        'assets/images/pages/fundamentals_measurement1.jpg',
+        'assets/images/pages/mep1.jpg',
+        'assets/images/pages/Tb09300179_g.jpg',
+        'assets/images/pages/service-4.jpg',
     ],
     'products' => [
         'assets/images/pages/FW-Totaal_2021-incl-C595_HR.png',
-        'assets/images/pages/333-3339647_fleet-monitoring-benefits-camera-systems-for-monitoring-petrol.png',
-        'assets/images/pages/real-time-digital-insights-and-automation-powering-digital-and-marketers-performance.png',
-        'assets/images/pages/Future-of-Petroleum-Automation.jpg',
-        'assets/images/pages/fundamentals_measurement1.jpg',
+        'assets/images/pages/HotelEnergyManagement1.jpg',
+        'assets/images/pages/kodak-building-B326.jpg',
+        'assets/images/pages/Turnaround-Support-Instrumentation-TM.jpg',
     ],
     'partners' => [
-        'assets/images/pages/FW-Totaal_2021-incl-C595_HR.png',
-        'assets/images/pages/26-06-171498539192-770x440_intro.png',
-        'assets/images/pages/real-time-digital-insights-and-automation-powering-digital-and-marketers-performance.png',
-        'assets/images/pages/extra-03799935.jpg',
+        'assets/images/pages/unnamed (1).jpg',
+        'assets/images/pages/bms1.png',
+        'assets/images/pages/product-engineering-services-in-Bangalore.jpg',
+        'assets/images/pages/program-industrial-eng.jpg',
     ],
     'contact' => [
-        'assets/images/pages/BLOG_gas-station.jpg',
-        'assets/images/pages/42.jpg',
-        'assets/images/pages/22-1.jpg',
-        'assets/images/pages/imageedit_16_7962794877.jpg',
+        'assets/images/pages/contact-us-customer-support-hotline-people-connect-150492744.jpg',
+        'assets/images/pages/Contact-banner.jpg',
+        'assets/images/pages/resized-image-Promo (24).jpeg',
+        'assets/images/pages/business-man-showing-contact-us-260nw-763718359.webp',
     ],
 ])
 
 @php($rawList = $pageImageMap[$pageKey] ?? [
-    'assets/images/pages/20160526_132916.jpg',
-    'assets/images/pages/Turnaround-Support-Instrumentation-TM.jpg',
-    'assets/images/pages/fundamentals_measurement1.jpg',
-    'assets/images/pages/extra-03799935.jpg',
+    'assets/images/pages/software.webp',
     'assets/images/pages/BLOG_gas-station.jpg',
-    'assets/images/pages/Future-of-Petroleum-Automation.jpg',
-    'assets/images/pages/HotelEnergyManagement1.jpg',
-    'assets/images/pages/bms1.png',
-    'assets/images/pages/FW-Totaal_2021-incl-C595_HR.png',
+    'assets/images/pages/LA-IT-Services-1.jpg',
+    'assets/images/pages/unnamed.jpg',
 ])
 
-@php($carouselImages = collect($rawList)->filter(fn($p) => str_starts_with($p, 'assets/images/pages/') && is_file(public_path($p)))->shuffle()->values()->all())
+@php($carouselImages = collect($rawList)->filter(fn($p) => str_starts_with($p, 'assets/images/pages/') && is_file(public_path($p)))->values()->all())
 @if(empty($carouselImages))
-    @php($carouselImages = ['assets/images/pages/20160526_132916.jpg'])
+    @php($carouselImages = ['assets/images/pages/software.webp'])
 @endif
 
 <section class="page-hero">

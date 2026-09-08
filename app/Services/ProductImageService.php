@@ -21,15 +21,13 @@ use RuntimeException;
  */
 class ProductImageService
 {
-    public const MIN_SIZE = 600;
-
     public const FULL_SIZE = 1200;
 
     public const THUMB_SIZE = 600;
 
-    public const MAX_BYTES = 4 * 1024 * 1024;
+    public const MAX_BYTES = 12 * 1024 * 1024;
 
-    public const ACCEPT = ['jpg', 'jpeg', 'png', 'webp'];
+    public const ACCEPT = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
 
     /** Relative directory under /public. */
     public string $dir = 'uploads/products';
@@ -42,26 +40,35 @@ class ProductImageService
         $slug = Str::slug($slug) ?: 'product-'.Str::random(6);
         $src = $this->readImage($file);
 
-        // Square centre-crop from the source.
         $w = imagesx($src);
         $h = imagesy($src);
-        $side = min($w, $h);
-        $sx = (int) (($w - $side) / 2);
-        $sy = (int) (($h - $side) / 2);
+        $ratio = $w / max($h, 1);
 
         $targetDir = public_path($this->dir);
         if (! is_dir($targetDir)) {
             mkdir($targetDir, 0755, true);
         }
 
-        $full = $this->square($src, $sx, $sy, $side, self::FULL_SIZE);
-        $thumb = $this->square($src, $sx, $sy, $side, self::THUMB_SIZE);
+        // Smart Crop / Fit Strategy:
+        // - Roughly square (0.8 <= ratio <= 1.25): Center crop to fill the square canvas cleanly.
+        // - Non-square (landscape or portrait): Fit entire image inside square canvas centered on a crisp white matte so no details are cut off.
+        if ($ratio >= 0.8 && $ratio <= 1.25) {
+            $side = min($w, $h);
+            $sx = (int) (($w - $side) / 2);
+            $sy = (int) (($h - $side) / 2);
+
+            $full = $this->squareCrop($src, $sx, $sy, $side, self::FULL_SIZE);
+            $thumb = $this->squareCrop($src, $sx, $sy, $side, self::THUMB_SIZE);
+        } else {
+            $full = $this->squareFit($src, $w, $h, self::FULL_SIZE);
+            $thumb = $this->squareFit($src, $w, $h, self::THUMB_SIZE);
+        }
 
         $imagePath = $this->dir.'/'.$slug.'.webp';
         $thumbPath = $this->dir.'/'.$slug.'-thumb.webp';
 
-        imagewebp($full, public_path($imagePath), 82);
-        imagewebp($thumb, public_path($thumbPath), 80);
+        imagewebp($full, public_path($imagePath), 85);
+        imagewebp($thumb, public_path($thumbPath), 82);
 
         imagedestroy($src);
         imagedestroy($full);
@@ -94,13 +101,37 @@ class ProductImageService
         return $img;
     }
 
-    private function square(\GdImage $src, int $sx, int $sy, int $side, int $size): \GdImage
+    private function squareCrop(\GdImage $src, int $sx, int $sy, int $side, int $targetSize): \GdImage
     {
-        $dst = imagecreatetruecolor($size, $size);
+        $dst = imagecreatetruecolor($targetSize, $targetSize);
         // White matte so transparent PNGs export cleanly on the product card.
         $white = imagecolorallocate($dst, 255, 255, 255);
-        imagefilledrectangle($dst, 0, 0, $size, $size, $white);
-        imagecopyresampled($dst, $src, 0, 0, $sx, $sy, $size, $size, $side, $side);
+        imagefilledrectangle($dst, 0, 0, $targetSize, $targetSize, $white);
+        imagecopyresampled($dst, $src, 0, 0, $sx, $sy, $targetSize, $targetSize, $side, $side);
+
+        return $dst;
+    }
+
+    private function squareFit(\GdImage $src, int $w, int $h, int $targetSize): \GdImage
+    {
+        $dst = imagecreatetruecolor($targetSize, $targetSize);
+        // White matte background for non-square product images
+        $white = imagecolorallocate($dst, 255, 255, 255);
+        imagefilledrectangle($dst, 0, 0, $targetSize, $targetSize, $white);
+
+        if ($w >= $h) {
+            $newW = $targetSize;
+            $newH = (int) round($h * ($targetSize / $w));
+            $dstX = 0;
+            $dstY = (int) round(($targetSize - $newH) / 2);
+        } else {
+            $newH = $targetSize;
+            $newW = (int) round($w * ($targetSize / $h));
+            $dstX = (int) round(($targetSize - $newW) / 2);
+            $dstY = 0;
+        }
+
+        imagecopyresampled($dst, $src, $dstX, $dstY, 0, 0, $newW, $newH, $w, $h);
 
         return $dst;
     }
