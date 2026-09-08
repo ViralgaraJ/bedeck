@@ -22,7 +22,13 @@
                 <a href="{{ whatsapp_link() }}" target="_blank" rel="noopener">{{ setting('whatsapp_display', '+94 77 171 1440') }} on WhatsApp</a>
                 <a href="mailto:{{ setting('email', 'info@bedeckinternational.lk') }}">{{ setting('email', 'info@bedeckinternational.lk') }}</a>
                 @if(setting('email_alt'))<a href="mailto:{{ setting('email_alt') }}">{{ setting('email_alt') }}</a>@endif
+                <a href="https://www.linkedin.com/in/bedeck-international-aab605220/"
+       target="_blank"
+       rel="noopener noreferrer">
+        LinkedIn
+    </a>
             </address>
+            
         </div>
 
         <form class="contact-form" method="post" action="{{ route('contact.store') }}">
