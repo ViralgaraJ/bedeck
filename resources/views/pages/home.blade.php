@@ -2,6 +2,13 @@
 
 @section('title', setting('company_name', 'Bedeck International').' | Industrial Engineering Solutions Sri Lanka')
 
+@if($heroImages->isNotEmpty())
+    @section('og_image', asset($heroImages->first()))
+    @push('head')
+    <link rel="preload" as="image" href="{{ asset($heroImages->first()) }}" fetchpriority="high">
+    @endpush
+@endif
+
 @section('content')
 
 {{-- ============ MAGICAL HERO ============ --}}

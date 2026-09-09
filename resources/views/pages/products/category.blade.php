@@ -9,6 +9,11 @@
     'eyebrow' => 'Product Category',
     'heading' => $category->name,
     'text' => $category->description ?: 'Explore our range of high-quality '.$category->name.' supplied by Bedeck International.',
+    'crumbs' => [
+        ['name' => 'Home', 'url' => route('home')],
+        ['name' => 'Products', 'url' => route('products.index')],
+        ['name' => $category->name, 'url' => route('products.category', $category)],
+    ],
 ])
 
 @include('partials.catalog', [

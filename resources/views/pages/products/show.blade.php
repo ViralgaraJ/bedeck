@@ -2,11 +2,20 @@
 
 @section('title', $product->name.' | '.($product->brand ?: 'Bedeck International'))
 @section('meta_description', \Illuminate\Support\Str::limit($product->short_description ?: $product->description, 155))
+@section('og_image', $product->image_url)
+
+@php($crumbs = array_values(array_filter([
+    ['name' => 'Home', 'url' => route('home')],
+    ['name' => 'Products', 'url' => route('products.index')],
+    $product->category ? ['name' => $product->category->name, 'url' => route('products.category', $product->category)] : null,
+    ['name' => $product->name, 'url' => route('products.show', $product)],
+])))
 
 @push('head')
+<link rel="preload" as="image" href="{{ $product->image_url }}" fetchpriority="high">
 <script type="application/ld+json">
 {!! json_encode([
-    '@context' => 'https://schema.org',
+    '@@context' => 'https://schema.org',
     '@type' => 'Product',
     'name' => $product->name,
     'image' => $product->image_url,
@@ -15,6 +24,7 @@
     'category' => optional($product->category)->name,
 ], JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) !!}
 </script>
+@include('partials.breadcrumb-schema', ['crumbs' => $crumbs])
 @endpush
 
 @section('content')

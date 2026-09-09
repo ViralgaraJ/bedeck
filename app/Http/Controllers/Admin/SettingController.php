@@ -28,6 +28,7 @@ class SettingController extends Controller
         'whatsapp_display' => 'WhatsApp number (display)',
         'email' => 'Primary email',
         'email_alt' => 'Secondary email',
+        'analytics_ga4_id' => 'Google Analytics 4 Measurement ID (e.g. G-XXXXXXXXXX)',
     ];
 
     public function edit(): View

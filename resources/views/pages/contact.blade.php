@@ -9,6 +9,10 @@
     'eyebrow' => 'Contact',
     'heading' => 'Request product sourcing, quotation or engineering consultation.',
     'text' => 'Use WhatsApp, email or the enquiry form to contact Bedeck International about industrial equipment and engineering requirements.',
+    'crumbs' => [
+        ['name' => 'Home', 'url' => route('home')],
+        ['name' => 'Contact', 'url' => route('contact')],
+    ],
 ])
 
 <section class="section">

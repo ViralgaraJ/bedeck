@@ -14,20 +14,24 @@
     <meta property="og:description" content="@yield('meta_description', 'Industrial engineering, product supply and consultation in Sri Lanka.')">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:image" content="{{ asset('assets/images/site/hero-slide-01.webp') }}">
+    <meta property="og:image" content="@yield('og_image', asset('assets/images/site/hero-slide-01.webp'))">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/css/site.css') }}?v=20">
     <script type="application/ld+json">
     {!! json_encode([
-        '@context' => 'https://schema.org',
-        '@type' => 'Organization',
+        '@@context' => 'https://schema.org',
+        '@type' => ['Organization', 'LocalBusiness'],
         'name' => setting('company_name', 'Bedeck International'),
+        'description' => 'Industrial engineering consultancy and product supplier in Sri Lanka covering petroleum, process instrumentation, MEP, energy management and building management systems.',
         'url' => url('/'),
         'logo' => asset('assets/optimized/bedeck-logo.webp'),
+        'image' => asset('assets/optimized/bedeck-logo.webp'),
         'telephone' => setting('phone', '+94 11 274 6006'),
         'email' => setting('email', 'info@bedeckinternational.lk'),
+        'foundingDate' => (string) setting('established_year', '2010'),
         'address' => [
             '@type' => 'PostalAddress',
             'streetAddress' => '10/3, Salmal Place, Devala Road, Depanama',
@@ -35,8 +39,26 @@
             'postalCode' => '10230',
             'addressCountry' => 'LK',
         ],
+        'contactPoint' => [
+            '@type' => 'ContactPoint',
+            'telephone' => setting('phone', '+94 11 274 6006'),
+            'contactType' => 'sales',
+            'areaServed' => 'LK',
+        ],
+        'sameAs' => array_values(array_filter([
+            'https://www.linkedin.com/in/bedeck-international-aab605220/',
+        ])),
     ], JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_PRETTY_PRINT) !!}
     </script>
+    @if(setting('analytics_ga4_id'))
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ setting('analytics_ga4_id') }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ setting('analytics_ga4_id') }}');
+    </script>
+    @endif
     @stack('head')
 </head>
 <body @yield('body_attr')>

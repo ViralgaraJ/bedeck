@@ -9,6 +9,10 @@
     'eyebrow' => 'Services',
     'heading' => 'Engineering services and equipment supplies for industrial and building requirements.',
     'text' => 'Bedeck International supports petroleum, process, MEP, EMS, BMS, FMS and Vastu consultation requirements across Sri Lanka.',
+    'crumbs' => [
+        ['name' => 'Home', 'url' => route('home')],
+        ['name' => 'Services', 'url' => route('services')],
+    ],
 ])
 
 <div class="services-intro">

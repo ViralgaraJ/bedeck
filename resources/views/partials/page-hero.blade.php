@@ -2,52 +2,53 @@
 @php($eyebrow = $eyebrow ?? '')
 @php($heading = $heading ?? '')
 @php($text = $text ?? '')
-@php($breadcrumb = $breadcrumb ?? null)
+@php($crumbs = $crumbs ?? [])
 
 @php($pageImageMap = [
     'about' => [
-        'assets/images/pages/software.webp',
-        'assets/images/pages/BLOG_gas-station.jpg',
-        'assets/images/pages/LA-IT-Services-1.jpg',
-        'assets/images/pages/unnamed.jpg',
+        'assets/images/pages/automation-software-technology.webp',
+        'assets/images/pages/petroleum-fuel-station-automation.jpg',
+        'assets/images/pages/engineering-consulting-services.jpg',
+        'assets/images/pages/industrial-engineering-gears.jpg',
     ],
     'services' => [
-        'assets/images/pages/fundamentals_measurement1.jpg',
-        'assets/images/pages/mep1.jpg',
-        'assets/images/pages/Tb09300179_g.jpg',
-        'assets/images/pages/service-4.jpg',
+        'assets/images/pages/process-instrumentation-pressure-gauge.jpg',
+        'assets/images/pages/mep-mechanical-pump-installation.jpg',
+        'assets/images/pages/process-control-automation-plant.jpg',
+        'assets/images/pages/industrial-valve-closeup.jpg',
     ],
     'products' => [
-        'assets/images/pages/FW-Totaal_2021-incl-C595_HR.png',
-        'assets/images/pages/HotelEnergyManagement1.jpg',
-        'assets/images/pages/kodak-building-B326.jpg',
-        'assets/images/pages/Turnaround-Support-Instrumentation-TM.jpg',
+        'assets/images/pages/fluidwell-flow-meters-product-range.png',
+        'assets/images/pages/energy-management-system-thermostat.jpg',
+        'assets/images/pages/building-mechanical-piping-system.jpg',
+        'assets/images/pages/pressure-gauge-instrumentation.jpg',
     ],
     'partners' => [
-        'assets/images/pages/unnamed (1).jpg',
-        'assets/images/pages/bms1.png',
-        'assets/images/pages/product-engineering-services-in-Bangalore.jpg',
-        'assets/images/pages/program-industrial-eng.jpg',
+        'assets/images/pages/business-partnership-consulting.jpg',
+        'assets/images/pages/building-management-system-network.png',
+        'assets/images/pages/product-engineering-data-analytics.jpg',
+        'assets/images/pages/industrial-iot-engineering-network.jpg',
     ],
     'contact' => [
-        'assets/images/pages/contact-us-customer-support-hotline-people-connect-150492744.jpg',
-        'assets/images/pages/Contact-banner.jpg',
-        'assets/images/pages/resized-image-Promo (24).jpeg',
-        'assets/images/pages/business-man-showing-contact-us-260nw-763718359.webp',
+        'assets/images/pages/contact-icons-phone-email.jpg',
+        'assets/images/pages/contact-us-icon-blocks.jpeg',
+        'assets/images/pages/business-contact-support-icons.webp',
     ],
 ])
 
-@php($rawList = $pageImageMap[$pageKey] ?? [
-    'assets/images/pages/software.webp',
-    'assets/images/pages/BLOG_gas-station.jpg',
-    'assets/images/pages/LA-IT-Services-1.jpg',
-    'assets/images/pages/unnamed.jpg',
-])
+@php($rawList = $pageImageMap[$pageKey] ?? $pageImageMap['about'])
 
 @php($carouselImages = collect($rawList)->filter(fn($p) => str_starts_with($p, 'assets/images/pages/') && is_file(public_path($p)))->values()->all())
 @if(empty($carouselImages))
-    @php($carouselImages = ['assets/images/pages/software.webp'])
+    @php($carouselImages = ['assets/images/pages/automation-software-technology.webp'])
 @endif
+
+@section('og_image', asset($carouselImages[0]))
+
+@push('head')
+<link rel="preload" as="image" href="{{ asset($carouselImages[0]) }}" fetchpriority="high">
+@include('partials.breadcrumb-schema', ['crumbs' => $crumbs])
+@endpush
 
 <section class="page-hero">
     <div class="page-hero__carousel" data-page-hero-carousel>
@@ -76,8 +77,17 @@
     </div>
 
     <div class="page-hero__inner" data-reveal>
-        @if(isset($breadcrumb))
-            <nav class="hero-breadcrumb">{!! $breadcrumb !!}</nav>
+        @if(count($crumbs))
+            <nav class="hero-breadcrumb" aria-label="Breadcrumb">
+                @foreach($crumbs as $crumb)
+                    @if(!$loop->first)<span>/</span>@endif
+                    @if($loop->last)
+                        <span aria-current="page">{{ $crumb['name'] }}</span>
+                    @else
+                        <a href="{{ $crumb['url'] }}">{{ $crumb['name'] }}</a>
+                    @endif
+                @endforeach
+            </nav>
         @endif
         @if($eyebrow)<p class="eyebrow">{{ $eyebrow }}</p>@endif
         <h1 class="grad-text">{{ $heading }}</h1>

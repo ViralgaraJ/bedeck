@@ -9,6 +9,10 @@
     'eyebrow' => 'Catalogue',
     'heading' => 'Industrial Products & Systems',
     'text' => 'Browse our range of specialized instruments, metering units, valves, transmitters, and engineering solutions.',
+    'crumbs' => [
+        ['name' => 'Home', 'url' => route('home')],
+        ['name' => 'Products', 'url' => route('products.index')],
+    ],
 ])
 
 @include('partials.catalog', [

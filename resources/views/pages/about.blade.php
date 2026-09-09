@@ -9,6 +9,10 @@
     'eyebrow' => 'About',
     'heading' => 'Multi-disciplinary engineering consulting from Sri Lanka.',
     'text' => 'Bedeck International provides products and services for a wide range of industrial needs, supported by technical experience and international product references.',
+    'crumbs' => [
+        ['name' => 'Home', 'url' => route('home')],
+        ['name' => 'About', 'url' => route('about')],
+    ],
 ])
 
 <section class="split">

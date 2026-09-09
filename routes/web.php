@@ -10,10 +10,19 @@ use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\InstallController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 
 // One-time installer for hosts without SSH — inert unless SETUP_TOKEN is set in .env.
 Route::get('/__install/{token}', InstallController::class);
+
+/*
+|--------------------------------------------------------------------------
+| SEO
+|--------------------------------------------------------------------------
+*/
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
+Route::get('/robots.txt', [SitemapController::class, 'robots'])->name('robots');
 
 /*
 |--------------------------------------------------------------------------

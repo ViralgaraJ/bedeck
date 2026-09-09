@@ -9,6 +9,10 @@
     'eyebrow' => 'Partners',
     'heading' => 'International brand references we represent.',
     'text' => 'Bedeck International sources equipment through a portfolio of international suppliers and principal partners.',
+    'crumbs' => [
+        ['name' => 'Home', 'url' => route('home')],
+        ['name' => 'Partners', 'url' => route('partners')],
+    ],
 ])
 
 <section class="section">
