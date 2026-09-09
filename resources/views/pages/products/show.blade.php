@@ -2,7 +2,7 @@
 
 @section('title', $product->name.' | '.($product->brand ?: 'Bedeck International'))
 @section('meta_description', \Illuminate\Support\Str::limit($product->short_description ?: $product->description, 155))
-@section('og_image', $product->image_url)
+@section('og_image', $product->image ?: 'assets/images/site/placeholder.svg')
 
 @php($crumbs = array_values(array_filter([
     ['name' => 'Home', 'url' => route('home')],

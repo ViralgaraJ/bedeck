@@ -43,7 +43,7 @@
     @php($carouselImages = ['assets/images/pages/automation-software-technology.webp'])
 @endif
 
-@section('og_image', asset($carouselImages[0]))
+@section('og_image', $carouselImages[0])
 
 @push('head')
 <link rel="preload" as="image" href="{{ asset($carouselImages[0]) }}" fetchpriority="high">

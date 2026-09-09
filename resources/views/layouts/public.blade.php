@@ -14,8 +14,18 @@
     <meta property="og:description" content="@yield('meta_description', 'Industrial engineering, product supply and consultation in Sri Lanka.')">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:image" content="@yield('og_image', asset('assets/images/site/hero-slide-01.webp'))">
+    @php($ogImagePath = setting('og_share_image') ?: trim((string) $__env->yieldContent('og_image', 'assets/images/site/hero-slide-01.webp')))
+    @php($ogImage = og_image_meta($ogImagePath))
+    <meta property="og:image" content="{{ $ogImage['url'] }}">
+    @if($ogImage['width'] && $ogImage['height'])
+    <meta property="og:image:width" content="{{ $ogImage['width'] }}">
+    <meta property="og:image:height" content="{{ $ogImage['height'] }}">
+    @endif
+    @if($ogImage['mime'])
+    <meta property="og:image:type" content="{{ $ogImage['mime'] }}">
+    @endif
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="{{ $ogImage['url'] }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">

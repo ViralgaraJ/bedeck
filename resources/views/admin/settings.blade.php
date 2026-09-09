@@ -4,7 +4,7 @@
 @section('content')
 <div class="admin-head"><h1>Site Settings</h1></div>
 
-<form method="post" action="{{ route('admin.settings.update') }}">
+<form method="post" action="{{ route('admin.settings.update') }}" enctype="multipart/form-data">
     @csrf @method('PUT')
 
     <div class="card">
@@ -20,6 +20,29 @@
                 </label>
             @endforeach
         </div>
+    </div>
+
+    <div class="card">
+        <h2 style="margin-top:0">Social sharing image</h2>
+        <p style="color:#64727a;margin-top:0">
+            This is the image shown when your site link is shared on WhatsApp, Facebook, or other apps.
+            If you don't set one, each page automatically uses its own photo. Recommended size: 1200×630px
+            (JPG, PNG or WEBP — it will be cropped and converted automatically).
+        </p>
+
+        @if($ogShareImage)
+            <div style="margin-bottom:1rem">
+                <img src="{{ asset($ogShareImage) }}?v={{ filemtime(public_path($ogShareImage)) }}" alt="Current social sharing image" style="max-width:320px;border-radius:8px;border:1px solid #e2e8f0;display:block">
+                <label class="check" style="margin-top:.6rem">
+                    <input type="checkbox" name="og_share_image_remove" value="1">
+                    Remove this image (revert to each page's own photo)
+                </label>
+            </div>
+        @endif
+
+        <label class="field full">Upload {{ $ogShareImage ? 'a replacement' : 'an image' }}
+            <input type="file" name="og_share_image" accept="image/jpeg,image/png,image/webp">
+        </label>
     </div>
 
     <div class="card">

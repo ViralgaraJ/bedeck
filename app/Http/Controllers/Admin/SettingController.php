@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\SiteSetting;
+use App\Services\OgImageService;
 use App\Support\EnvWriter;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -13,6 +14,8 @@ use Illuminate\View\View;
 
 class SettingController extends Controller
 {
+    public function __construct(private readonly OgImageService $ogImage) {}
+
     /** Content settings stored in the site_settings table. */
     private const SITE_FIELDS = [
         'company_name' => 'Company name',
@@ -39,6 +42,7 @@ class SettingController extends Controller
             'mail' => $this->currentMail(),
             'envWritable' => is_writable(app()->environmentFilePath()),
             'configCached' => app()->configurationIsCached(),
+            'ogShareImage' => setting('og_share_image'),
         ]);
     }
 
@@ -48,6 +52,8 @@ class SettingController extends Controller
             collect(self::SITE_FIELDS)
                 ->mapWithKeys(fn ($label, $key) => [$key => ['nullable', 'string', 'max:2000']])
                 ->merge([
+                    'og_share_image' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp', 'max:4096'],
+                    'og_share_image_remove' => ['sometimes', 'boolean'],
                     'mail_enabled' => ['sometimes', 'boolean'],
                     'mail_host' => ['nullable', 'string', 'max:190'],
                     'mail_port' => ['nullable', 'integer', 'between:1,65535'],
@@ -63,6 +69,15 @@ class SettingController extends Controller
         // 1. Content settings -> database
         foreach (self::SITE_FIELDS as $key => $label) {
             SiteSetting::set($key, $data[$key] ?? null);
+        }
+
+        // 1b. Social sharing image -> public/uploads, path stored in settings.
+        if ($request->hasFile('og_share_image')) {
+            $path = $this->ogImage->store($request->file('og_share_image'));
+            SiteSetting::set('og_share_image', $path);
+        } elseif ($request->boolean('og_share_image_remove')) {
+            $this->ogImage->delete();
+            SiteSetting::set('og_share_image', null);
         }
 
         // 2. Mail settings -> .env
