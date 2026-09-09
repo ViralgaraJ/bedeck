@@ -115,4 +115,17 @@ return [
         'name' => env('MAIL_FROM_NAME', env('APP_NAME', 'Laravel')),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Contact-form recipient
+    |--------------------------------------------------------------------------
+    |
+    | Where website enquiry notifications are delivered. Managed from the admin
+    | Site Settings screen, which writes MAIL_ENQUIRY_TO to .env. Falls back to
+    | the "from" address when unset.
+    |
+    */
+
+    'enquiry_to' => env('MAIL_ENQUIRY_TO'),
+
 ];

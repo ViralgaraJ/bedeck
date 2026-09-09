@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\EnquiryNotification;
 use App\Models\Category;
 use App\Models\Enquiry;
 use App\Models\Partner;
@@ -9,6 +10,7 @@ use App\Models\Product;
 use App\Models\Service;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\View\View;
 
@@ -84,8 +86,30 @@ class PageController extends Controller
         unset($data['website']);
         $data['ip_address'] = $request->ip();
 
-        Enquiry::create($data);
+        $enquiry = Enquiry::create($data);
+
+        $this->notifyByEmail($enquiry);
 
         return back()->with('success', 'Thank you. Your enquiry has been received and Bedeck International will respond soon.');
+    }
+
+    /**
+     * Email the enquiry to the configured recipient. A mail failure must never
+     * break the visitor's submission — the enquiry is already stored.
+     */
+    protected function notifyByEmail(Enquiry $enquiry): void
+    {
+        $to = config('mail.enquiry_to') ?: config('mail.from.address');
+
+        if (blank($to)) {
+            return;
+        }
+
+        try {
+            $enquiry->loadMissing('product');
+            Mail::to($to)->send(new EnquiryNotification($enquiry));
+        } catch (\Throwable $e) {
+            report($e);
+        }
     }
 }
