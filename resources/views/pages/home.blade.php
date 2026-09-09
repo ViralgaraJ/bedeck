@@ -31,9 +31,9 @@
 {{-- ============ TRUST BAND (count-up) ============ --}}
 <div class="trust">
     <div data-reveal><strong data-count="{{ (int) setting('established_year', 2010) }}">{{ setting('established_year', '2010') }}</strong><span>Established in Sri Lanka</span></div>
-    <div data-reveal data-reveal-delay="1"><strong data-count="{{ (int) setting('stat_products', 92) }}" data-suffix="+">{{ (int) setting('stat_products', 92) }}+</strong><span>Active product entries</span></div>
-    <div data-reveal data-reveal-delay="2"><strong data-count="{{ (int) setting('stat_partners', 8) }}">{{ (int) setting('stat_partners', 8) }}</strong><span>Principal partner references</span></div>
-    <div data-reveal data-reveal-delay="3"><strong data-count="{{ (int) setting('stat_categories', 11) }}">{{ (int) setting('stat_categories', 11) }}</strong><span>Product categories</span></div>
+    <div data-reveal data-reveal-delay="1"><strong data-count="{{ $statProducts }}" data-suffix="+">{{ $statProducts }}+</strong><span>Active product entries</span></div>
+    <div data-reveal data-reveal-delay="2"><strong data-count="{{ $statPartners }}">{{ $statPartners }}</strong><span>Principal partner references</span></div>
+    <div data-reveal data-reveal-delay="3"><strong data-count="{{ $statCategories }}">{{ $statCategories }}</strong><span>Product categories</span></div>
 </div>
 
 {{-- ============ CORE SERVICES ============ --}}

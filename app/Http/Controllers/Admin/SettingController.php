@@ -28,9 +28,6 @@ class SettingController extends Controller
         'whatsapp_display' => 'WhatsApp number (display)',
         'email' => 'Primary email',
         'email_alt' => 'Secondary email',
-        'stat_products' => 'Stat — product entries',
-        'stat_partners' => 'Stat — principal partners',
-        'stat_categories' => 'Stat — product categories',
     ];
 
     public function edit(): View

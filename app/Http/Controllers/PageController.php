@@ -31,6 +31,9 @@ class PageController extends Controller
             'partners' => Partner::where('is_active', true)->orderBy('sort_order')->get(),
             'showcase' => Product::active()->where('is_featured', true)->orderBy('sort_order')->take(6)->get()
                 ->whenEmpty(fn () => Product::active()->orderBy('sort_order')->take(6)->get()),
+            'statProducts' => Product::active()->count(),
+            'statPartners' => Partner::where('is_active', true)->count(),
+            'statCategories' => Category::where('is_active', true)->count(),
         ]);
     }
 

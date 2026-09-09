@@ -23,9 +23,6 @@ class SettingsSeeder extends Seeder
             'whatsapp_display' => '+94 77 171 1440',
             'email' => 'info@bedeckinternational.lk',
             'email_alt' => 'bedeck@sltnet.lk',
-            'stat_products' => '92',
-            'stat_partners' => '8',
-            'stat_categories' => '11',
         ];
 
         foreach ($defaults as $key => $value) {
