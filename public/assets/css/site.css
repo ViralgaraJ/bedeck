@@ -20,7 +20,7 @@
   /* legacy alias */
   --c-royal: #2563eb;
   --c-indigo: #4f46e5;
-  --c-peri: #818cf8;
+  --c-peri: #3b82f6;
   --c-violet: #818cf8;
   /* legacy alias, softened to periwinkle */
 
@@ -838,7 +838,7 @@ p {
   font-weight: 600;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: var(--ink);
+  color: var(--c-cyan);
   background: rgba(4, 8, 20, .55);
   border: 1px solid var(--glass-border);
   backdrop-filter: blur(10px);
@@ -880,7 +880,7 @@ p {
 .hero p.lead {
   max-width: 54ch;
   margin: 1.7rem 0 0;
-  color: #e2e8f0;
+  color: var(--muted);
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
   font-weight: 450;
 }
