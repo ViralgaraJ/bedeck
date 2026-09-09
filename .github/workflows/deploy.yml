@@ -16,31 +16,51 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Trigger cPanel deployment
+      - name: Pull latest commit and deploy on cPanel
         env:
           CPANEL_HOST: ultra40-b.lhws.net
           CPANEL_USERNAME: viralgar
           CPANEL_API_TOKEN: ${{ secrets.CPANEL_API_TOKEN }}
           REPOSITORY_ROOT: /home/viralgar/staging-2-bedeck.viralgaraj.com
+          BRANCH: main
         run: |
           set -e
 
+          api() {
+            curl -sS \
+              --fail-with-body \
+              --retry 3 \
+              --retry-all-errors \
+              --retry-delay 2 \
+              -X POST \
+              -H "Authorization: cpanel ${CPANEL_USERNAME}:${CPANEL_API_TOKEN}" \
+              -H "Accept: application/json" \
+              "$@"
+          }
+
+          echo "Pulling ${BRANCH} into cPanel's copy of the repository..."
+
+          UPDATE_RESPONSE=$(api \
+            --data-urlencode "repository_root=${REPOSITORY_ROOT}" \
+            --data-urlencode "branch=${BRANCH}" \
+            "https://${CPANEL_HOST}:2083/execute/VersionControl/update")
+
+          echo "$UPDATE_RESPONSE"
+
+          python3 -c 'import json,sys; payload=json.loads(sys.argv[1]); sys.exit(0 if payload.get("status") == 1 else 1)' "$UPDATE_RESPONSE" || {
+            echo "::error::cPanel VersionControl/update did not report success."
+            exit 1
+          }
+
           echo "Triggering cPanel deployment..."
 
-          RESPONSE=$(curl -sS \
-            --fail-with-body \
-            --retry 3 \
-            --retry-all-errors \
-            --retry-delay 2 \
-            -X POST \
-            -H "Authorization: cpanel ${CPANEL_USERNAME}:${CPANEL_API_TOKEN}" \
-            -H "Accept: application/json" \
+          DEPLOY_RESPONSE=$(api \
             --data-urlencode "repository_root=${REPOSITORY_ROOT}" \
             "https://${CPANEL_HOST}:2083/execute/VersionControlDeployment/create")
 
-          echo "$RESPONSE"
+          echo "$DEPLOY_RESPONSE"
 
-          python3 -c 'import json,sys; payload=json.loads(sys.argv[1]); sys.exit(0 if payload.get("status") == 1 else 1)' "$RESPONSE" || {
+          python3 -c 'import json,sys; payload=json.loads(sys.argv[1]); sys.exit(0 if payload.get("status") == 1 else 1)' "$DEPLOY_RESPONSE" || {
             echo "::error::cPanel deployment API did not report success."
             exit 1
           }
