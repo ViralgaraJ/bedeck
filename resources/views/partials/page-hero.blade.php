@@ -4,41 +4,7 @@
 @php($text = $text ?? '')
 @php($crumbs = $crumbs ?? [])
 
-@php($pageImageMap = [
-    'about' => [
-        'assets/images/pages/automation-software-technology.webp',
-        'assets/images/pages/petroleum-fuel-station-automation.jpg',
-        'assets/images/pages/engineering-consulting-services.jpg',
-        'assets/images/pages/industrial-engineering-gears.jpg',
-    ],
-    'services' => [
-        'assets/images/pages/process-instrumentation-pressure-gauge.jpg',
-        'assets/images/pages/mep-mechanical-pump-installation.jpg',
-        'assets/images/pages/process-control-automation-plant.jpg',
-        'assets/images/pages/industrial-valve-closeup.jpg',
-    ],
-    'products' => [
-        'assets/images/pages/fluidwell-flow-meters-product-range.png',
-        'assets/images/pages/energy-management-system-thermostat.jpg',
-        'assets/images/pages/building-mechanical-piping-system.jpg',
-        'assets/images/pages/pressure-gauge-instrumentation.jpg',
-    ],
-    'partners' => [
-        'assets/images/pages/business-partnership-consulting.jpg',
-        'assets/images/pages/building-management-system-network.png',
-        'assets/images/pages/product-engineering-data-analytics.jpg',
-        'assets/images/pages/industrial-iot-engineering-network.jpg',
-    ],
-    'contact' => [
-        'assets/images/pages/contact-icons-phone-email.jpg',
-        'assets/images/pages/contact-us-icon-blocks.jpeg',
-        'assets/images/pages/business-contact-support-icons.webp',
-    ],
-])
-
-@php($rawList = $pageImageMap[$pageKey] ?? $pageImageMap['about'])
-
-@php($carouselImages = collect($rawList)->filter(fn($p) => str_starts_with($p, 'assets/images/pages/') && is_file(public_path($p)))->values()->all())
+@php($carouselImages = \App\Models\HeroSlide::where('page_key', $pageKey)->orderBy('sort_order')->pluck('image')->filter(fn ($p) => is_file(public_path($p)))->values()->all())
 @if(empty($carouselImages))
     @php($carouselImages = ['assets/images/pages/automation-software-technology.webp'])
 @endif

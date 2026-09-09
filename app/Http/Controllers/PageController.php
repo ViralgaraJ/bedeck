@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\EnquiryNotification;
 use App\Models\Category;
 use App\Models\Enquiry;
+use App\Models\HeroSlide;
 use App\Models\Partner;
 use App\Models\Product;
 use App\Models\Service;
@@ -18,10 +19,7 @@ class PageController extends Controller
 {
     public function home(): View
     {
-        $heroImages = collect(range(1, 7))
-            ->map(fn ($n) => sprintf('assets/images/site/hero-slide-%02d.webp', $n))
-            ->filter(fn ($p) => is_file(public_path($p)))
-            ->values();
+        $heroImages = HeroSlide::where('page_key', 'home')->orderBy('sort_order')->pluck('image');
 
         return view('pages.home', [
             'heroImages' => $heroImages,

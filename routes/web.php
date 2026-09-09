@@ -3,9 +3,11 @@
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EnquiryController;
+use App\Http\Controllers\Admin\HeroSlideController;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\PartnerController as AdminPartnerController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
+use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\InstallController;
 use App\Http\Controllers\PageController;
@@ -64,5 +66,17 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('settings', [SettingController::class, 'edit'])->name('settings.edit');
         Route::put('settings', [SettingController::class, 'update'])->name('settings.update');
         Route::post('settings/test-mail', [SettingController::class, 'testMail'])->name('settings.test-mail');
+
+        Route::get('profile', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::middleware('throttle:6,1')->group(function () {
+            Route::put('profile/email', [ProfileController::class, 'updateEmail'])->name('profile.email');
+            Route::put('profile/password', [ProfileController::class, 'updatePassword'])->name('profile.password');
+        });
+
+        Route::get('hero-slides', [HeroSlideController::class, 'index'])->name('hero-slides.index');
+        Route::post('hero-slides', [HeroSlideController::class, 'store'])->name('hero-slides.store');
+        Route::delete('hero-slides/{heroSlide}', [HeroSlideController::class, 'destroy'])->name('hero-slides.destroy');
+        Route::post('hero-slides/{heroSlide}/move-up', [HeroSlideController::class, 'moveUp'])->name('hero-slides.move-up');
+        Route::post('hero-slides/{heroSlide}/move-down', [HeroSlideController::class, 'moveDown'])->name('hero-slides.move-down');
     });
 });

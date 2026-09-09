@@ -1,3 +1,23 @@
+/* Bedeck admin — mobile sidebar nav toggle */
+(function () {
+  "use strict";
+  var toggle = document.querySelector("[data-admin-menu-toggle]");
+  var links = document.querySelector("[data-admin-side-links]");
+  if (!toggle || !links) return;
+
+  toggle.addEventListener("click", function () {
+    var open = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!open));
+    links.classList.toggle("is-open", !open);
+  });
+  links.addEventListener("click", function (e) {
+    if (e.target.closest("a")) {
+      links.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+    }
+  });
+})();
+
 /* Bedeck admin — product image preview + client-side info hint */
 (function () {
   "use strict";
