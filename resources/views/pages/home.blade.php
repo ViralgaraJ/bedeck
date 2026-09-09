@@ -74,8 +74,8 @@
         <h2>Reliable engineering consultation with an international product portfolio.</h2></div>
     <div class="prose" data-reveal data-reveal-delay="1">
         <p>{{ setting('company_name', 'Bedeck International') }} is renowned across Sri Lanka as an engineering consultant since {{ setting('established_year', '2010') }}. The company is built around reputation, dependability and industrial solutions supported by international brands including ISOIL IMPIANTI Italy, OMC Italy, Fluidwell Netherlands, PROTECH India, Accord Fuel Services India and UFLOW India.</p>
-        <p>At {{ setting('company_name', 'Bedeck International') }}, we maintain high standards of quality, technology, design and sustainability to serve customers better. We specialize in providing total solutions for industrial requirements.</p>
-        <p>Vastuworld Satellite Center supports Vastu-related requirements for land selection, property purchase, built-house evaluation and corrective recommendations.</p>
+        <p>At {{ setting('company_name', 'Bedeck International') }}, we maintain high standards of quality, technology, design and sustainability to serve customers better. We specialize in providing total solutions for your needs.</p>
+        <p>Vastuworld Satellite Center was established recently as we found there is a dire need of Vastu related problems of those who intend buying lands for house making, getting the property selected, when buying built houses, intend going for Vastu evaluation of their homes and go for corrections if needed. We have the solutions. We deal with all these matters scientifically.</p>
     </div>
 </section>
 
