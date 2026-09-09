@@ -5,8 +5,7 @@
 #
 # NOTE: task lines that begin with a variable must be quoted as a whole string,
 # otherwise the YAML parser rejects "$PHP" followed by bare text.
----
----
+
 deployment:
   tasks:
     - export PHP=/usr/local/bin/ea-php82
