@@ -1,11 +1,9 @@
----
 # cPanel Git Version Control deploy tasks.
 # Runs in-place: this repo's working copy IS bedeck.viralgaraj.com's doc root parent
 # (Document Root = .../bedeck.viralgaraj.com/public), so no rsync/DEPLOYPATH needed.
 #
 # NOTE: task lines that begin with a variable must be quoted as a whole string,
 # otherwise the YAML parser rejects "$PHP" followed by bare text.
-
 deployment:
   tasks:
     - export PHP=/usr/local/bin/ea-php82
