@@ -220,7 +220,12 @@ p { margin: 0 0 1rem; }
   margin-top: .3rem; padding-inline: 1.1rem;
 }
 .brand { display: inline-flex; align-items: center; gap: .8rem; text-decoration: none; min-width: 0; }
-.brand img.brand-logo-img { width: auto; height: 42px; max-height: 42px; object-fit: contain; padding: 0; background: transparent; border-radius: 6px; border: none; box-shadow: drop-shadow(0 2px 8px rgba(0,0,0,0.5)); }
+.brand img.brand-logo-img {
+  width: auto; height: 44px; max-height: 44px; object-fit: contain;
+  padding: 6px 12px; background: rgba(255, 255, 255, .97); border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, .5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .5), 0 0 0 1px rgba(0, 0, 0, .06);
+}
 .brand img:not(.brand-logo-img) { width: 46px; height: 46px; object-fit: contain; padding: 5px;
   background: #fff; border-radius: 12px; border: 1px solid rgba(255, 255, 255, .6);
   box-shadow: 0 8px 20px -8px rgba(0, 0, 0, .45), 0 0 0 1px rgba(59, 130, 246, .12); }
@@ -333,9 +338,9 @@ p { margin: 0 0 1rem; }
 .hero__photos div {
   position: absolute; inset: 0; background-size: cover; background-position: center;
   opacity: 0; transform: scale(1.08); transition: opacity 1.6s ease, transform 8s ease;
-  filter: saturate(1.08) brightness(0.85) contrast(1.02);
+  filter: saturate(1.08) brightness(0.98) contrast(1.02);
 }
-.hero__photos div.is-active { opacity: 0.88; transform: scale(1); }
+.hero__photos div.is-active { opacity: 0.96; transform: scale(1); }
 
 .hero__video { position: absolute; inset: 0; opacity: 0; transition: opacity 1.6s ease; overflow: hidden; }
 .hero__video.is-on { opacity: 1; }
