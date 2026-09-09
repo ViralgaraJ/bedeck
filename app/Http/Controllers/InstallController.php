@@ -29,7 +29,7 @@ class InstallController extends Controller
             $log[] = 'key:generate → '.trim(Artisan::output());
         }
 
-        Artisan::call('migrate', ['--force' => true, '--seed' => true]);
+        Artisan::call('migrate', ['--force' => true]);
         $log[] = trim(Artisan::output());
 
         try {
