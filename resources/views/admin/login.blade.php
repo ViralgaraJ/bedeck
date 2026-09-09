@@ -13,7 +13,7 @@
 <div class="login-wrap">
     <form class="login-card" method="post" action="{{ route('admin.login.attempt') }}">
         @csrf
-        <div class="brand"><img src="{{ asset('assets/optimized/bedeck-logo.webp') }}" alt=""> Bedeck International</div>
+        <div class="brand"><img src="{{ asset('assets/optimized/bedeck-logo2.jpg') }}" alt="{{ setting('company_name', 'Bedeck International') }}"></div>
         <p style="margin-top:0;color:#64727a">Sign in to manage products and content.</p>
 
         @if($errors->any())

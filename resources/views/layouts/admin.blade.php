@@ -14,7 +14,7 @@
 <div class="admin-shell">
     <aside class="admin-side">
         <a class="brand" href="{{ route('admin.dashboard') }}">
-            <img src="{{ asset('assets/optimized/bedeck-logo.webp') }}" alt=""> BEDECK ADMIN
+            <img src="{{ asset('assets/optimized/bedeck-logo2.jpg') }}" alt="{{ setting('company_name', 'Bedeck International') }}"> ADMIN
         </a>
         @php($is = fn($p) => request()->routeIs($p) ? 'active' : '')
         <a class="nav-link {{ $is('admin.dashboard') }}" href="{{ route('admin.dashboard') }}">Dashboard</a>
