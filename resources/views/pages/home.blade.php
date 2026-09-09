@@ -107,5 +107,5 @@
 @endsection
 
 @push('scripts')
-    <script src="{{ asset('assets/js/home.js') }}?v=7" defer></script>
+    <script src="{{ asset('assets/js/home.js') }}?v=8" defer></script>
 @endpush
