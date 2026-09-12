@@ -3,7 +3,6 @@
         <div class="footer-brand">
             <a class="footer-logo" href="{{ route('home') }}">
                 <img src="{{ asset('assets/optimized/bedeck-logo2.jpg') }}" alt="{{ setting('company_name', 'Bedeck International') }} logo">
-                <span>{{ setting('company_name', 'Bedeck International') }}</span>
             </a>
             <p>Industrial engineering, product supply and consultation in Sri Lanka.</p>
             <div class="footer-social">
@@ -47,7 +46,7 @@
     </div>
 
     <div class="footer-bottom">
-        <span>&copy; {{ date('Y') }} {{ setting('company_name', 'Bedeck International') }}. All rights reserved.</span>
+        <span>&copy; {{ date('Y') }} {{ setting('company_name', 'Bedeck International') }}. All rights reserved. &nbsp;|&nbsp; Crafted by ViralgaraJ</span>
         <span>{{ setting('company_role', 'Engineering Consultants') }} in Sri Lanka since {{ setting('established_year', '2010') }}</span>
     </div>
 </footer>

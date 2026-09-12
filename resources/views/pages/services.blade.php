@@ -44,7 +44,7 @@
     @endforeach
 </div>
 
-<div class="services-cta" style="text-align: center; margin: -1rem auto 4rem;" data-reveal>
+<div class="services-cta" data-reveal>
     <a class="services-cta-link" href="{{ route('products.index') }}">
         <span>Browse Products for More Informations</span>
         <svg class="cta-arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>

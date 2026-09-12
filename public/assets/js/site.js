@@ -230,7 +230,7 @@
     function startAutoPlay() {
       stopAutoPlay();
       if (!reduce && slides.length > 1) {
-        timer = setInterval(nextSlide, 4500);
+        timer = setInterval(nextSlide, 1500);
       }
     }
 

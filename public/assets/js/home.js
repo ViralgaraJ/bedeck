@@ -152,7 +152,7 @@
     if (photos.length > 1 && !reduce) {
       carouselTimer = setInterval(function () {
         goToHeroSlide(pi + 1);
-      }, 4500);
+      }, 1500);
     }
   }
 

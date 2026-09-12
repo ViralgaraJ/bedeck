@@ -57,7 +57,7 @@
             </a>
         @endforeach
     </div>
-    <div style="margin-top:1.6rem" data-reveal><a class="button secondary dark" href="{{ route('services') }}">View Services</a></div>
+    <div class="section-cta" data-reveal><a class="button secondary dark" href="{{ route('services') }}">View Services</a></div>
 </section>
 
 {{-- ============ FEATURED PRODUCTS (Disabled - Uncomment to restore) ============
@@ -107,5 +107,5 @@
 @endsection
 
 @push('scripts')
-    <script src="{{ asset('assets/js/home.js') }}?v=8" defer></script>
+    <script src="{{ asset('assets/js/home.js') }}?v=10" defer></script>
 @endpush

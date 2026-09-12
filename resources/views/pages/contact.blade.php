@@ -18,7 +18,6 @@
 <section class="section">
     <div class="contact-band" data-reveal>
         <div>
-            <p class="eyebrow" style="color:#f0ba67">Contact / Request a Quote</p>
             <h2>Talk to {{ setting('company_name', 'Bedeck International') }} about product sourcing or engineering support.</h2>
             <address class="contact-info-list">
                 <div class="contact-item">
@@ -80,7 +79,7 @@
             @if(session('error'))<div class="alert error">{{ session('error') }}</div>@endif
             @if($errors->any())
                 <div class="alert error">
-                    <ul style="margin:0;padding-left:1.1rem">
+                    <ul>
                         @foreach($errors->all() as $error)<li>{{ $error }}</li>@endforeach
                     </ul>
                 </div>
