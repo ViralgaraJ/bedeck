@@ -49,6 +49,19 @@ class PageController extends Controller
         ]);
     }
 
+    public function serviceShow(Service $service): View
+    {
+        abort_unless($service->is_active, 404);
+
+        $related = Service::where('is_active', true)
+            ->where('id', '!=', $service->id)
+            ->orderBy('sort_order')
+            ->take(3)
+            ->get();
+
+        return view('pages.services.show', compact('service', 'related'));
+    }
+
     public function partners(): View
     {
         return view('pages.partners', [

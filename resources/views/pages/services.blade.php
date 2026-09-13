@@ -38,7 +38,8 @@
                 @if($service->icon)<img src="{{ asset($service->icon) }}" alt="" loading="lazy">@endif
             </div>
             <h3>{{ $service->title }}</h3>
-            <p>{{ $service->body ?: $service->summary }}</p>
+            <p>{{ $service->summary ?: \Illuminate\Support\Str::limit($service->body, 140) }}</p>
+            <a class="text-link" href="{{ route('services.show', $service) }}">Learn More &rarr;</a>
         </article>
     @endforeach
 </div>
