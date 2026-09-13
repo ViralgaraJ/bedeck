@@ -82,6 +82,35 @@ class Product extends Model
         return $this->datasheet ? asset($this->datasheet) : null;
     }
 
+    /** Shift every product at or after $order down the list by one, opening up a slot at $order. */
+    public static function makeRoomAt(int $order, ?int $ignoreId = null): void
+    {
+        static::query()
+            ->when($ignoreId, fn (Builder $q) => $q->where('id', '!=', $ignoreId))
+            ->where('sort_order', '>=', $order)
+            ->increment('sort_order');
+    }
+
+    /** Pull every product after $order back by one, closing the gap left behind at $order. */
+    public static function closeGapAt(int $order, ?int $ignoreId = null): void
+    {
+        static::query()
+            ->when($ignoreId, fn (Builder $q) => $q->where('id', '!=', $ignoreId))
+            ->where('sort_order', '>', $order)
+            ->decrement('sort_order');
+    }
+
+    /** Re-slot an existing product from $oldOrder to $newOrder, nudging everything in between so no two products share a position. */
+    public static function moveToOrder(int $newOrder, int $oldOrder, int $ignoreId): void
+    {
+        if ($newOrder === $oldOrder) {
+            return;
+        }
+
+        static::closeGapAt($oldOrder, $ignoreId);
+        static::makeRoomAt($newOrder, $ignoreId);
+    }
+
     public function scopeActive(Builder $query): Builder
     {
         return $query->where('is_active', true);

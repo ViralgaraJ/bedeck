@@ -21,8 +21,7 @@
         <h2>Seven Premium Service Lines. One Trusted Partner.</h2>
     </div>
     <p class="prose" data-reveal data-reveal-delay="1">
-        From upstream petroleum installations to building automation and Vastu consultation, every
-        engagement is backed by 30+ years of engineering experience and an international product portfolio.
+        From upstream petroleum installations to building automation, energy management, fuel management, and Vastu consultation, Bedeck International delivers comprehensive engineering solutions backed by over 30 years of combined experience and a strong portfolio of internationally recognized products and technologies.
     </p>
 </div>
 
@@ -46,7 +45,7 @@
 
 <div class="services-cta" data-reveal>
     <a class="services-cta-link" href="{{ route('products.index') }}">
-        <span>Browse Products for More Informations</span>
+        <span>Browse Products for More Information</span>
         <svg class="cta-arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
     </a>
 </div>

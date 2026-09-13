@@ -18,6 +18,7 @@
       var open = toggle.getAttribute("aria-expanded") === "true";
       toggle.setAttribute("aria-expanded", String(!open));
       nav.classList.toggle("is-open", !open);
+      if (!open && header) header.classList.remove("is-hidden");
     });
     nav.addEventListener("click", function (e) {
       if (e.target.closest("a")) {
@@ -26,6 +27,25 @@
       }
     });
   }
+
+  /* ---------- Header height sync ----------
+     Measures the real, rendered header height and exposes it as
+     --header-space so page content always starts exactly at its bottom
+     edge — no gap, no overlap, regardless of font metrics or breakpoint. */
+  var headerEl = document.querySelector("[data-header]");
+  function syncHeaderSpace() {
+    if (!headerEl) return;
+    var h = headerEl.getBoundingClientRect().height;
+    if (h > 0) {
+      document.documentElement.style.setProperty("--header-space", h + "px");
+    }
+  }
+  syncHeaderSpace();
+  window.addEventListener("resize", function () { raf(syncHeaderSpace); }, { passive: true });
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(syncHeaderSpace);
+  }
+  window.addEventListener("load", syncHeaderSpace);
 
   /* ---------- Scroll progress + header state ---------- */
   var bar = document.querySelector("[data-scroll-progress]");
@@ -42,12 +62,23 @@
   function onScroll() {
     var y = window.pageYOffset || document.documentElement.scrollTop || 0;
     if (y === lastScroll) return;
+    var goingDown = y > lastScroll;
     lastScroll = y;
 
     var doc = document.documentElement;
     var max = doc.scrollHeight - doc.clientHeight;
     if (bar) bar.style.width = (max > 0 ? (y / max) * 100 : 0) + "%";
-    if (header) header.classList.toggle("is-scrolled", y > 24);
+    if (header) {
+      header.classList.toggle("is-scrolled", y > 24);
+      var menuOpen = nav && nav.classList.contains("is-open");
+      if (!menuOpen) {
+        if (y > 120 && goingDown) {
+          header.classList.add("is-hidden");
+        } else if (!goingDown || y <= 120) {
+          header.classList.remove("is-hidden");
+        }
+      }
+    }
 
     if (!reduce) {
       auroraShift.sy = y * -0.06;

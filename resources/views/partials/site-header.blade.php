@@ -4,10 +4,20 @@
         <a href="{{ whatsapp_link() }}" target="_blank" rel="noopener">WhatsApp {{ setting('whatsapp_display', '+94 77 171 1440') }}</a>
     </div>
     <div class="nav-shell">
+        @php($brandWords = explode(' ', setting('company_name', 'Bedeck International'), 2))
         <a class="brand" href="{{ route('home') }}" aria-label="{{ setting('company_name', 'Bedeck International') }} home">
+            <img src="{{ asset('assets/optimized/bedeck-logo.webp') }}" alt="{{ setting('company_name', 'Bedeck International') }} logo" class="brand-logo-img">
             <span class="brand-copy">
-                <img src="{{ asset('assets/optimized/bedeck-logo2.jpg') }}" alt="{{ setting('company_name', 'Bedeck International') }} logo" class="brand-logo-img">
+                <span class="brand-name">
+                    <span>{{ strtoupper($brandWords[0]) }}</span>
+                    @if(!empty($brandWords[1]))
+                        <span>{{ strtoupper($brandWords[1]) }}</span>
+                    @endif
+                </span>
                 <span class="brand-consultants">{{ strtoupper(setting('company_role', 'Engineering Consultants')) }}</span>
+                @if(setting('company_tagline'))
+                    <span class="brand-slogan">{{ setting('company_tagline') }}</span>
+                @endif
             </span>
         </a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>

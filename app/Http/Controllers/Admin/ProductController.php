@@ -9,6 +9,7 @@ use App\Models\Product;
 use App\Services\ProductImageService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\View\View;
 
@@ -58,7 +59,12 @@ class ProductController extends Controller
             $product->datasheet = $this->storeDatasheet($request, $product->slug);
         }
 
-        $product->save();
+        DB::transaction(function () use ($product) {
+            if ($product->sort_order !== null) {
+                Product::makeRoomAt($product->sort_order);
+            }
+            $product->save();
+        });
 
         return redirect()->route('admin.products.index')
             ->with('success', "“{$product->name}” has been added.");
@@ -76,6 +82,7 @@ class ProductController extends Controller
     {
         $data = $request->validated();
         $data['slug'] = ($data['slug'] ?? null) ?: $product->slug;
+        $oldOrder = $product->sort_order;
         $product->fill($data);
 
         if ($request->hasFile('image')) {
@@ -89,7 +96,14 @@ class ProductController extends Controller
             $product->datasheet = $this->storeDatasheet($request, $product->slug);
         }
 
-        $product->save();
+        DB::transaction(function () use ($product, $oldOrder) {
+            if ($product->sort_order !== null && $oldOrder !== null && $product->sort_order !== $oldOrder) {
+                Product::moveToOrder($product->sort_order, $oldOrder, $product->id);
+            } elseif ($product->sort_order !== null && $oldOrder === null) {
+                Product::makeRoomAt($product->sort_order, $product->id);
+            }
+            $product->save();
+        });
 
         return redirect()->route('admin.products.index')
             ->with('success', "“{$product->name}” has been updated.");
@@ -102,7 +116,14 @@ class ProductController extends Controller
             @unlink(public_path($product->datasheet));
         }
         $name = $product->name;
-        $product->delete();
+
+        DB::transaction(function () use ($product) {
+            $order = $product->sort_order;
+            $product->delete();
+            if ($order !== null) {
+                Product::closeGapAt($order);
+            }
+        });
 
         return redirect()->route('admin.products.index')
             ->with('success', "“{$name}” has been deleted.");

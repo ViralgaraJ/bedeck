@@ -19,11 +19,11 @@
     <div data-reveal><p class="eyebrow">Company Profile</p>
         <h2>Established in {{ setting('established_year', '2010') }} with an industrial engineering focus.</h2></div>
     <div class="prose" data-reveal data-reveal-delay="1">
-        <p>{{ setting('company_name', 'Bedeck International') }} is a multi-disciplinary independent engineering consulting firm established in {{ setting('established_year', '2010') }} with a team of experienced individuals with more than 30+ years of working experience and offering products and services required for various industrial needs.</p>
+        <p>{{ setting('company_name', 'Bedeck International') }} is a multi-disciplinary, independent engineering consulting firm established in 2010. The company is supported by a team of experienced professionals with over 30 years of combined industry experience, providing a wide range of products and services to meet the diverse requirements of various industrial sectors.</p>
         <p>The company headquarters are at {{ setting('address', 'No. 10/3 Salmal Place, Devala Road, Depanama, Pannipitiya, Sri Lanka') }}.</p>
         <div class="mission-grid">
-            <article><h3>Vision</h3><p>To be recognized through performance and excellence as the leading consultants providing solutions to the customer’s needs.</p></article>
-            <article><h3>Mission</h3><p>As a socially responsible multi-disciplinary consultant, Bedeck International will grow and develop through professionalism, innovation and consistent performance while providing security to staff and satisfaction to clients.</p></article>
+            <article><h3>Vision</h3><p>To be recognized through performance and excellence as a leading engineering consultancy, delivering innovative and reliable solutions that consistently meet and exceed our customers’ needs.</p></article>
+            <article><h3>Mission</h3><p>As a socially responsible, multi-disciplinary engineering consultancy, Bedeck International is committed to growing and developing through professionalism, innovation, and consistent performance. We strive to deliver reliable and value-driven solutions that ensure customer satisfaction, foster a secure and rewarding working environment for our employees, and achieve sustainable profitability.</p></article>
         </div>
     </div>
 </section>

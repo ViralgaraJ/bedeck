@@ -37,6 +37,13 @@
     <span>{{ $product->name }}</span>
 </nav>
 
+<div class="product-back-row" data-reveal>
+    <a href="{{ route('products.index') }}" class="back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        Back to Products
+    </a>
+</div>
+
 <div class="product-detail">
     <div class="product-detail__media" data-reveal>
         <img src="{{ $product->image_url }}" alt="{{ $product->name }}" width="800" height="800">

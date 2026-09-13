@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Partner;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\View\View;
 
@@ -39,7 +40,10 @@ class PartnerController extends Controller
             );
         }
 
-        Partner::create($data);
+        DB::transaction(function () use ($data) {
+            Partner::makeRoomAt($data['sort_order']);
+            Partner::create($data);
+        });
 
         return redirect()
             ->route('admin.partners.index')
@@ -64,7 +68,14 @@ class PartnerController extends Controller
             );
         }
 
-        $partner->update($data);
+        $oldOrder = $partner->sort_order;
+
+        DB::transaction(function () use ($partner, $data, $oldOrder) {
+            if ($data['sort_order'] !== $oldOrder) {
+                Partner::moveToOrder($data['sort_order'], $oldOrder, $partner->id);
+            }
+            $partner->update($data);
+        });
 
         return redirect()
             ->route('admin.partners.index')
@@ -77,7 +88,11 @@ class PartnerController extends Controller
 
         $name = $partner->name;
 
-        $partner->delete();
+        DB::transaction(function () use ($partner) {
+            $order = $partner->sort_order;
+            $partner->delete();
+            Partner::closeGapAt($order);
+        });
 
         return redirect()
             ->route('admin.partners.index')
