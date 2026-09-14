@@ -1,5 +1,9 @@
 @extends('layouts.public')
 
+@section('body_attr')
+class="has-hero"
+@endsection
+
 @section('title', setting('company_name', 'Bedeck International').' | Industrial Engineering Solutions Sri Lanka')
 
 @if($heroImages->isNotEmpty())
@@ -49,9 +53,12 @@
         <p class="eyebrow">Core Services</p>
         <h2>Engineering support across petroleum, process, MEP and building systems.</h2>
     </div>
+    @php($accents = ['59 130 246', '34 211 238', '99 102 241', '14 165 233'])
     <div class="service-icon-grid">
         @foreach($services as $service)
-            <a class="service-icon-item" href="{{ route('services') }}#{{ $service->slug }}" data-reveal data-reveal-delay="{{ $loop->index % 4 }}">
+            <a class="service-icon-item" href="{{ route('services.show', $service) }}"
+               style="--sc: {{ $accents[$loop->index % count($accents)] }}"
+               data-reveal data-reveal-delay="{{ $loop->index % 4 }}">
                 @if($service->icon)<img src="{{ asset($service->icon) }}" alt="" loading="lazy">@endif
                 <span>{{ $service->title }}</span>
             </a>
@@ -108,5 +115,5 @@
 @endsection
 
 @push('scripts')
-    <script src="{{ asset('assets/js/home.js') }}?v=14" defer></script>
+    <script src="{{ asset('assets/js/home.js') }}?v=16" defer></script>
 @endpush

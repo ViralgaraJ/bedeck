@@ -1,3 +1,7 @@
+@section('body_attr')
+class="has-hero"
+@endsection
+
 @php($pageKey = $pageKey ?? 'default')
 @php($eyebrow = $eyebrow ?? '')
 @php($heading = $heading ?? '')

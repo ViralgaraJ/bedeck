@@ -28,19 +28,19 @@
 @php($accents = ['59 130 246', '34 211 238', '99 102 241', '14 165 233'])
 <div class="services-bento">
     @foreach($services as $service)
-        @php($wide = $loop->last && $services->count() % 3 === 1 && $services->count() > 3)
-        <article class="service-card {{ $wide ? 'wide' : '' }}"
-                 id="{{ $service->slug }}"
-                 style="--sc: {{ $accents[$loop->index % count($accents)] }}"
-                 data-reveal data-reveal-delay="{{ $loop->index % 4 }}" data-tilt>
+        @php($solo = $loop->last && $services->count() % 3 === 1 && $services->count() > 3)
+        <a class="service-card {{ $solo ? 'solo' : '' }}"
+           href="{{ route('services.show', $service) }}"
+           id="{{ $service->slug }}"
+           style="--sc: {{ $accents[$loop->index % count($accents)] }}"
+           data-reveal data-reveal-delay="{{ $loop->index % 4 }}" data-tilt>
             <span class="num">{{ sprintf('%02d', $loop->iteration) }}</span>
             <div class="ic">
                 @if($service->icon)<img src="{{ asset($service->icon) }}" alt="" loading="lazy">@endif
             </div>
             <h3>{{ $service->title }}</h3>
-            <p>{{ $service->summary ?: \Illuminate\Support\Str::limit($service->body, 140) }}</p>
-            <a class="text-link" href="{{ route('services.show', $service) }}">Learn More &rarr;</a>
-        </article>
+            <span class="text-link">more &rarr;</span>
+        </a>
     @endforeach
 </div>
 

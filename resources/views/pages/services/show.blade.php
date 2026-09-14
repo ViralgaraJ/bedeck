@@ -37,14 +37,19 @@
     </a>
 </div>
 
-<div class="product-detail">
-    <div class="product-detail__media" data-reveal>
+@php($accents = ['59 130 246', '34 211 238', '99 102 241', '14 165 233'])
+@php($sc = $accents[$serviceIndex % count($accents)])
+<div class="product-detail service-detail" style="--sc: {{ $sc }}">
+    <div class="product-detail__media product-detail__media--icon" data-reveal>
         @if($service->icon)
             <img src="{{ $service->icon_url }}" alt="{{ $service->title }}" width="240" height="240" style="max-width:220px;">
         @endif
     </div>
     <div class="product-detail__body" data-reveal data-reveal-delay="1">
-        <p class="eyebrow">Bedeck International</p>
+        <div class="service-detail__badge">
+            <span class="service-detail__num">{{ sprintf('%02d', $serviceIndex + 1) }} / {{ sprintf('%02d', $serviceCount) }}</span>
+            <p class="eyebrow">Bedeck International</p>
+        </div>
         <h1>{{ $service->title }}</h1>
         @if($service->summary)<p class="lead">{{ $service->summary }}</p>@endif
 
@@ -66,14 +71,13 @@
     <div class="section-heading" data-reveal><p class="eyebrow">More Services</p><h2>Explore other service lines.</h2></div>
     <div class="services-bento">
         @foreach($related as $item)
-            <article class="service-card" id="{{ $item->slug }}" style="--sc: 59 130 246" data-reveal data-reveal-delay="{{ $loop->index }}">
+            <a class="service-card" href="{{ route('services.show', $item) }}" id="{{ $item->slug }}" style="--sc: 59 130 246" data-reveal data-reveal-delay="{{ $loop->index }}">
                 <div class="ic">
                     @if($item->icon)<img src="{{ asset($item->icon) }}" alt="" loading="lazy">@endif
                 </div>
                 <h3>{{ $item->title }}</h3>
-                <p>{{ $item->summary }}</p>
-                <a class="text-link" href="{{ route('services.show', $item) }}">Learn More &rarr;</a>
-            </article>
+                <span class="text-link">More &rarr;</span>
+            </a>
         @endforeach
     </div>
 </section>

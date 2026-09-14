@@ -53,13 +53,19 @@ class PageController extends Controller
     {
         abort_unless($service->is_active, 404);
 
+        $activeServices = Service::where('is_active', true)->orderBy('sort_order')->pluck('id');
+
         $related = Service::where('is_active', true)
             ->where('id', '!=', $service->id)
             ->orderBy('sort_order')
             ->take(3)
             ->get();
 
-        return view('pages.services.show', compact('service', 'related'));
+        $serviceIndex = $activeServices->search($service->id);
+        $serviceIndex = $serviceIndex === false ? 0 : $serviceIndex;
+        $serviceCount = $activeServices->count();
+
+        return view('pages.services.show', compact('service', 'related', 'serviceIndex', 'serviceCount'));
     }
 
     public function partners(): View

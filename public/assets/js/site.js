@@ -47,6 +47,26 @@
   }
   window.addEventListener("load", syncHeaderSpace);
 
+  /* ---------- Brand logo height sync ----------
+     Matches the logo image's rendered height to the wordmark text block
+     next to it, so the two share the same top and bottom edge instead of
+     being vertically centered against each other. */
+  var brandCopyEl = document.querySelector(".brand-copy");
+  var brandLogoEl = document.querySelector(".brand-logo-img");
+  function syncBrandLogoHeight() {
+    if (!brandCopyEl || !brandLogoEl) return;
+    var h = brandCopyEl.getBoundingClientRect().height;
+    if (h > 0) {
+      document.documentElement.style.setProperty("--brand-logo-h", h + "px");
+    }
+  }
+  syncBrandLogoHeight();
+  window.addEventListener("resize", function () { raf(syncBrandLogoHeight); }, { passive: true });
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(syncBrandLogoHeight);
+  }
+  window.addEventListener("load", syncBrandLogoHeight);
+
   /* ---------- Scroll progress + header state ---------- */
   var bar = document.querySelector("[data-scroll-progress]");
   var header = document.querySelector("[data-header]");
@@ -121,7 +141,7 @@
 
   /* ---------- Glass tilt + glare ---------- */
   if (fine && !reduce) {
-    var tiltSelector = "[data-tilt], .product-card, .category-grid > a, .partner-grid > a, .service-icon-item, .trust > div";
+    var tiltSelector = "[data-tilt], .product-card, .category-grid > a, .partner-grid > a, .trust > div";
     var tilts = Array.prototype.slice.call(document.querySelectorAll(tiltSelector));
     tilts.forEach(function (el) {
       el.classList.add("tilt");
@@ -261,7 +281,7 @@
     function startAutoPlay() {
       stopAutoPlay();
       if (!reduce && slides.length > 1) {
-        timer = setInterval(nextSlide, 1500);
+        timer = setInterval(nextSlide, 5000);
       }
     }
 
