@@ -24,7 +24,6 @@ class="has-hero"
             @endforeach
         </div>
         <div class="hero__scrim"></div>
-        <div class="hero__dots" data-hero-dots></div>
     </div>
     <canvas class="hero__canvas" id="hero-canvas" aria-hidden="true"></canvas>
     <div class="hero__inner">

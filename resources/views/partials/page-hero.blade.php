@@ -38,12 +38,6 @@ class="has-hero"
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
         </button>
 
-        <div class="page-hero__dots" data-carousel-dots>
-            @foreach($carouselImages as $idx => $img)
-                <button type="button" class="page-hero__dot @if($loop->first) is-active @endif"
-                        aria-label="Go to slide {{ $idx + 1 }}" data-dot-index="{{ $idx }}"></button>
-            @endforeach
-        </div>
     </div>
 
     <div class="page-hero__inner" data-reveal>
