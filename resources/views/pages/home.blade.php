@@ -29,7 +29,7 @@ class="has-hero"
     <div class="hero__inner">
         <p class="hero__eyebrow">{{ setting('hero_eyebrow', 'Industrial equipment supplier and engineering consultant in Sri Lanka') }}</p>
         <h1 data-hero-heading>{{ setting('hero_heading', 'Engineering solutions for industrial operations.') }}</h1>
-        <p class="lead">{{ setting('hero_intro', 'We bring you the best in the world. Bedeck International has supported Sri Lankan industrial requirements since 2010 with dependable engineering consultation, product sourcing and total industrial solutions.') }}</p>
+        <p class="lead">{{ setting('hero_intro', 'We bring you the best in the world. Bedeck International has supported Sri Lankan industrial requirements since 2010 with dependable engineering consultation product sourcing and total industrial solutions.') }}</p>
         <div class="hero__actions">
             <a class="button primary" href="{{ route('products.index') }}">Explore Products</a>
             <a class="button secondary" href="{{ whatsapp_link() }}" target="_blank" rel="noopener">WhatsApp Enquiry</a>
@@ -86,10 +86,10 @@ class="has-hero"
     <div data-reveal><p class="eyebrow">Why {{ setting('company_name', 'Bedeck International') }}</p>
         <h2>Reliable engineering consultation with an international product portfolio.</h2></div>
     <div class="prose" data-reveal data-reveal-delay="1">
-        <p>{{ setting('company_name', 'Bedeck International') }} is a renowned engineering consultancy in Sri Lanka, established in 2010. Over the years, the company has built a strong reputation for professionalism, dependability, technical expertise, and innovative industrial solutions.</p>
-        <p>We provide engineering products, services, and comprehensive solutions supported by internationally recognized brands, including ISOIL IMPIANTI (Italy), OMC (Italy), Fluidwell (Netherlands), PROTECH (India), Accord Fuel Services (India), and UFLOW (India).</p>
-        <p>At {{ setting('company_name', 'Bedeck International') }}, we maintain high standards of quality, technology, engineering design, and sustainability, with a strong commitment to delivering reliable and value-added solutions. Our technical expertise enables us to develop integrated and customized solutions to meet the specific requirements of a wide range of industrial and commercial applications.</P>
-        <p>In response to the growing interest in professional Vastu consultation, {{ setting('company_name', 'Bedeck International') }} has also established a Vastu Satellite Centre in Sri Lanka. Through this initiative, we provide professional guidance and practical solutions for creating balanced and harmonious living and working environments.</p>
+        <p>{{ setting('company_name', 'Bedeck International') }} is a renowned engineering consultancy in Sri Lanka established in 2010. Over the years the company has built a strong reputation for professionalism dependability technical expertise and innovative industrial solutions.</p>
+        <p>We provide engineering products services and comprehensive solutions supported by internationally recognized brands including ISOIL IMPIANTI (Italy) OMC (Italy) Fluidwell (Netherlands) PROTECH (India) Accord Fuel Services (India) and UFLOW (India).</p>
+        <p>At {{ setting('company_name', 'Bedeck International') }} we maintain high standards of quality technology engineering design and sustainability with a strong commitment to delivering reliable and value-added solutions. Our technical expertise enables us to develop integrated and customized solutions to meet the specific requirements of a wide range of industrial and commercial applications.</P>
+        <p>In response to the growing interest in professional Vastu consultation, {{ setting('company_name', 'Bedeck International') }} has also established a Vastu Satellite Centre in Sri Lanka. Through this initiative we provide professional guidance and practical solutions for creating balanced and harmonious living and working environments.</p>
     </div>
 </section>
 
