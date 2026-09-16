@@ -6,7 +6,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 
-return Application::configure(basePath: dirname(__DIR__))
+$app = Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
         web: __DIR__.'/../routes/web.php',
         commands: __DIR__.'/../routes/console.php',
@@ -22,3 +22,13 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withExceptions(function (Exceptions $exceptions): void {
         //
     })->create();
+
+// Shared hosts that can't point the domain's Document Root at /public (it's
+// locked to public_html) instead set PUBLIC_PATH=/home/user/public_html in
+// .env, so uploaded files (products, datasheets, hero images, ...) land in
+// the folder Apache actually serves instead of the inaccessible /public.
+if ($publicPath = env('PUBLIC_PATH')) {
+    $app->usePublicPath($publicPath);
+}
+
+return $app;

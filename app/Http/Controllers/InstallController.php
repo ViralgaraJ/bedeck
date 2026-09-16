@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Artisan;
 
@@ -32,8 +33,13 @@ class InstallController extends Controller
         Artisan::call('migrate', ['--force' => true]);
         $log[] = trim(Artisan::output());
 
-        Artisan::call('db:seed', ['--force' => true]);
-        $log[] = 'db:seed → '.trim(Artisan::output());
+        // Seed once, only into a genuinely empty database (no users yet) — this
+        // bootstraps a fresh no-SSH deploy without ever re-running on a live site
+        // and clobbering content already edited through the admin panel.
+        if (User::query()->count() === 0) {
+            Artisan::call('db:seed', ['--force' => true]);
+            $log[] = 'db:seed → '.trim(Artisan::output());
+        }
 
         try {
             Artisan::call('storage:link');
