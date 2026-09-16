@@ -14,3 +14,4 @@ deployment:
     - '"$PHP" artisan migrate --force'
     - '"$PHP" artisan optimize:clear'
     - '"$PHP" artisan config:cache'
+    - rsync -a --exclude='index.php' public/ ../public_html/ || true
