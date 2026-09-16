@@ -567,13 +567,26 @@ p {
   height: var(--brand-logo-h, 60px);
   box-sizing: border-box;
   padding: .3rem .45rem;
-  background: rgba(255, 255, 255, .84);
+  background: linear-gradient(160deg, rgba(255, 255, 255, .94), rgba(255, 255, 255, .78));
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, .55);
-  box-shadow: 0 6px 18px -6px rgba(0, 0, 0, .4), inset 0 1px 0 rgba(255, 255, 255, .65), 0 0 0 1px rgba(59, 130, 246, .12);
-  transition: height .1s, background .3s var(--ease);
+  border: 1px solid rgba(255, 255, 255, .6);
+  box-shadow:
+    0 6px 18px -6px rgba(0, 0, 0, .4),
+    inset 0 1px 0 rgba(255, 255, 255, .7),
+    0 0 0 1px rgba(59, 130, 246, .16),
+    0 0 20px -6px rgba(34, 211, 238, .4);
+  transition: height .1s, background .3s var(--ease), box-shadow .3s var(--ease), transform .3s var(--ease);
+}
+
+.brand:hover .brand-logo-wrap {
+  transform: translateY(-1px);
+  box-shadow:
+    0 10px 24px -8px rgba(0, 0, 0, .45),
+    inset 0 1px 0 rgba(255, 255, 255, .8),
+    0 0 0 1px rgba(59, 130, 246, .3),
+    0 0 26px -2px rgba(34, 211, 238, .55);
 }
 
 .brand img.brand-logo-img {
