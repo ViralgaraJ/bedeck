@@ -30,16 +30,29 @@ In cPanel → *Domains* (or *Addon Domains*), set the domain's **Document Root**
 `/home/cpaneluser/bedeck/public`. Done.
 
 **If you cannot change the Document Root** (domain is locked to `public_html`):
-move the contents of `public/` into `public_html/`, move everything else to
-`/home/cpaneluser/bedeck`, then edit `public_html/index.php` and change the two
-`require` paths from `__DIR__.'/../` to `__DIR__.'/../bedeck/`:
+copy the contents of `public/` (`index.php`, `.htaccess`, `favicon.ico`, `assets/`)
+into `public_html/`, keeping the rest of the project at `/home/cpaneluser/bedeck`.
+Edit `public_html/index.php` and change the two `require` paths from
+`__DIR__.'/../'` to `__DIR__.'/../bedeck/'`:
 
 ```php
 require __DIR__.'/../bedeck/vendor/autoload.php';
 $app = require_once __DIR__.'/../bedeck/bootstrap/app.php';
 ```
 
-A ready-made `public_html/.htaccess` is already included in `public/.htaccess` — keep it.
+Then add to `.env`:
+
+```
+PUBLIC_PATH=/home/cpaneluser/public_html
+```
+
+This tells Laravel to treat `public_html` as its public path, so uploaded
+product images, datasheets, hero slides and the `storage:link` symlink are
+written straight into `public_html` (where Apache actually serves them from)
+instead of the inaccessible `bedeck/public`. Without this, admin uploads would
+land in a folder the web server never reads and silently not appear on the
+live site. Re-copy `index.php` / `assets/` into `public_html` only when those
+static files change — runtime uploads need no re-syncing once `PUBLIC_PATH` is set.
 
 ## 3. Configure the environment
 
