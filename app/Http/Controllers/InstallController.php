@@ -32,6 +32,9 @@ class InstallController extends Controller
         Artisan::call('migrate', ['--force' => true]);
         $log[] = trim(Artisan::output());
 
+        Artisan::call('db:seed', ['--force' => true]);
+        $log[] = 'db:seed → '.trim(Artisan::output());
+
         try {
             Artisan::call('storage:link');
             $log[] = 'storage:link → '.trim(Artisan::output());
