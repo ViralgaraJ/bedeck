@@ -236,14 +236,10 @@
   if (pageHeroCarousel) {
     var slides = Array.prototype.slice.call(pageHeroCarousel.querySelectorAll(".page-hero__slide"));
     var dots = Array.prototype.slice.call(pageHeroCarousel.querySelectorAll(".page-hero__dot"));
-    var prevBtn = pageHeroCarousel.querySelector("[data-carousel-prev]");
-    var nextBtn = pageHeroCarousel.querySelector("[data-carousel-next]");
     var currentIndex = 0;
     var timer = null;
 
-    slides.forEach(function (slide, i) {
-      if (slide.classList.contains("is-active")) currentIndex = i;
-    });
+    if (slides.length) slides[0].classList.add("is-active");
 
     var counterEl = pageHeroCarousel.querySelector("[data-carousel-counter]");
 
@@ -274,14 +270,10 @@
       goToSlide(currentIndex + 1);
     }
 
-    function prevSlide() {
-      goToSlide(currentIndex - 1);
-    }
-
     function startAutoPlay() {
       stopAutoPlay();
       if (!reduce && slides.length > 1) {
-        timer = setInterval(nextSlide, 5000);
+        timer = setInterval(nextSlide, 2000);
       }
     }
 
@@ -291,45 +283,6 @@
         timer = null;
       }
     }
-
-    if (prevBtn) {
-      prevBtn.addEventListener("click", function () {
-        prevSlide();
-        startAutoPlay();
-      });
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener("click", function () {
-        nextSlide();
-        startAutoPlay();
-      });
-    }
-
-    dots.forEach(function (dot, i) {
-      dot.addEventListener("click", function () {
-        goToSlide(i);
-        startAutoPlay();
-      });
-    });
-
-    pageHeroCarousel.addEventListener("mouseenter", stopAutoPlay);
-    pageHeroCarousel.addEventListener("mouseleave", startAutoPlay);
-
-    // Touch swipe support
-    var startX = 0;
-    pageHeroCarousel.addEventListener("touchstart", function (e) {
-      startX = e.touches[0].clientX;
-    }, { passive: true });
-
-    pageHeroCarousel.addEventListener("touchend", function (e) {
-      var endX = e.changedTouches[0].clientX;
-      var diff = startX - endX;
-      if (Math.abs(diff) > 40) {
-        if (diff > 0) nextSlide(); else prevSlide();
-        startAutoPlay();
-      }
-    }, { passive: true });
 
     startAutoPlay();
   }
