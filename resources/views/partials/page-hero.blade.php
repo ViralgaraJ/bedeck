@@ -24,20 +24,12 @@ class="has-hero"
     <div class="page-hero__carousel" data-page-hero-carousel>
         <div class="page-hero__slides">
             @foreach($carouselImages as $idx => $img)
-                <div class="page-hero__slide @if($loop->first) is-active @endif"
+                <div class="page-hero__slide"
                      data-slide-index="{{ $idx }}"
                      style="background-image:url('{{ asset($img) }}')"></div>
             @endforeach
         </div>
         <div class="page-hero__overlay"></div>
-
-        <button type="button" class="page-hero__arrow page-hero__arrow--prev" aria-label="Previous slide" data-carousel-prev>
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-        </button>
-        <button type="button" class="page-hero__arrow page-hero__arrow--next" aria-label="Next slide" data-carousel-next>
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-        </button>
-
     </div>
 
     <div class="page-hero__inner" data-reveal>
