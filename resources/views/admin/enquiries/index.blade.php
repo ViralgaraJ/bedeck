@@ -9,7 +9,7 @@
         <thead><tr><th>Received</th><th>Name</th><th>Email</th><th>Product</th><th>Subject</th><th></th></tr></thead>
         <tbody>
         @forelse($enquiries as $e)
-            <tr style="{{ $e->is_read ? '' : 'font-weight:800;background:#fbfdfc' }}">
+            <tr class="{{ $e->is_read ? '' : 'is-unread' }}">
                 <td>{{ $e->created_at->format('Y-m-d H:i') }}</td>
                 <td>{{ $e->name }}</td>
                 <td>{{ $e->email }}</td>
