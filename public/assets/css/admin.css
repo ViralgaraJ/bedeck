@@ -120,10 +120,21 @@ td .thumb { width: 46px; height: 46px; min-width: 46px; object-fit: contain; bac
 .btn.danger { background: rgba(255, 122, 90, .12); border-color: rgba(255, 122, 90, .4); color: var(--danger); }
 .btn.sm { min-height: 32px; padding: .3rem .65rem; font-size: .82rem; }
 
-.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; align-items: start; }
 .form-grid .full { grid-column: 1 / -1; }
 label.field { display: grid; gap: .35rem; font-family: var(--font-display); font-weight: 500; font-size: .84rem; color: var(--ink); }
 label.field .hint { font-weight: 400; color: var(--muted); font-size: .8rem; }
+.pw-wrap { position: relative; display: block; }
+.pw-wrap input { padding-right: 2.75rem; }
+.pw-toggle {
+  position: absolute; top: 50%; right: .35rem; transform: translateY(-50%);
+  display: flex; align-items: center; justify-content: center; width: 34px; height: 34px;
+  border: none; background: transparent; color: var(--muted); border-radius: 8px; cursor: pointer;
+  transition: color .2s, background .2s;
+}
+.pw-toggle:hover, .pw-toggle:focus-visible { color: var(--ink); background: rgba(255, 255, 255, .08); }
+.pw-toggle svg { width: 19px; height: 19px; }
+
 input, textarea, select {
   width: 100%; min-height: 44px; border: 1px solid var(--line); border-radius: 11px; padding: .6rem .85rem; font: inherit;
   background: rgba(255, 255, 255, .04); color: var(--ink); transition: border-color .2s, box-shadow .2s;

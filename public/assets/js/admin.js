@@ -18,6 +18,23 @@
   });
 })();
 
+/* Bedeck admin — show/hide password toggle */
+(function () {
+  "use strict";
+  document.querySelectorAll("[data-pw-toggle]").forEach(function (btn) {
+    var input = btn.parentElement.querySelector("input");
+    if (!input) return;
+    btn.addEventListener("click", function () {
+      var show = input.type === "password";
+      input.type = show ? "text" : "password";
+      btn.setAttribute("aria-pressed", String(show));
+      btn.setAttribute("aria-label", show ? "Hide password" : "Show password");
+      btn.querySelector(".pw-eye-open").hidden = show;
+      btn.querySelector(".pw-eye-closed").hidden = !show;
+    });
+  });
+})();
+
 /* Bedeck admin — product image preview + client-side info hint */
 (function () {
   "use strict";
