@@ -19,7 +19,10 @@
                 @error('email', 'updateEmail')<span class="hint" style="color:var(--danger)">{{ $message }}</span>@enderror
             </label>
             <label class="field full">Current password, to confirm this change
-                <input type="password" name="current_password" required autocomplete="current-password">
+                <span class="pw-wrap">
+                    <input type="password" name="current_password" required autocomplete="current-password">
+                    @include('admin.partials.pw-toggle')
+                </span>
                 @error('current_password', 'updateEmail')<span class="hint" style="color:var(--danger)">{{ $message }}</span>@enderror
             </label>
         </div>
@@ -37,15 +40,24 @@
         @csrf @method('PUT')
         <div class="form-grid">
             <label class="field full">Current password
-                <input type="password" name="current_password" required autocomplete="current-password">
+                <span class="pw-wrap">
+                    <input type="password" name="current_password" required autocomplete="current-password">
+                    @include('admin.partials.pw-toggle')
+                </span>
                 @error('current_password', 'updatePassword')<span class="hint" style="color:var(--danger)">{{ $message }}</span>@enderror
             </label>
             <label class="field">New password
-                <input type="password" name="password" required minlength="10" autocomplete="new-password">
+                <span class="pw-wrap">
+                    <input type="password" name="password" required minlength="10" autocomplete="new-password">
+                    @include('admin.partials.pw-toggle')
+                </span>
                 @error('password', 'updatePassword')<span class="hint" style="color:var(--danger)">{{ $message }}</span>@enderror
             </label>
             <label class="field">Confirm new password
-                <input type="password" name="password_confirmation" required minlength="10" autocomplete="new-password">
+                <span class="pw-wrap">
+                    <input type="password" name="password_confirmation" required minlength="10" autocomplete="new-password">
+                    @include('admin.partials.pw-toggle')
+                </span>
             </label>
         </div>
         <button class="btn primary" type="submit" style="margin-top:1rem">Update password</button>
