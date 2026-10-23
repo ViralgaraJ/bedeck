@@ -16,4 +16,8 @@ deployment:
     - '"$PHP" artisan migrate --force'
     - '"$PHP" artisan optimize:clear'
     - '"$PHP" artisan config:cache'
-    - rsync -a --exclude='index.php' public/ ../public_html/ || true
+    # Publish public/ into the live doc root. rsync isn't installed on biz70,
+    # so pipe through tar. Skipped: index.php (public_html's copy points at
+    # ../bedeck/), .htaccess (may hold the host's PHP handler) and storage
+    # (the storage:link symlink).
+    - tar -C public --exclude=./index.php --exclude=./.htaccess --exclude=./storage -cf - . | tar -C ../public_html -xf -
