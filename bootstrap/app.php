@@ -30,11 +30,15 @@ $app = Application::configure(basePath: dirname(__DIR__))
 //
 // This runs before Laravel's own env-loading bootstrapper, and once
 // config:cache has been run that bootstrapper never loads .env again on any
-// later request — so env() here would silently see nothing without this
-// explicit, safe (idempotent) load.
-\Dotenv\Dotenv::createImmutable($app->basePath())->safeLoad();
+// later request — so read PUBLIC_PATH straight from the file. Only parse it:
+// loading the whole .env into the process env here made `php artisan test`
+// pass DB_CONNECTION=mysql on to PHPUnit, wiping the local database.
+$publicPath = env('PUBLIC_PATH');
+if (! $publicPath && is_file($envFile = $app->environmentFilePath())) {
+    $publicPath = \Dotenv\Dotenv::parse(file_get_contents($envFile))['PUBLIC_PATH'] ?? null;
+}
 
-if ($publicPath = env('PUBLIC_PATH')) {
+if ($publicPath) {
     $app->usePublicPath($publicPath);
 }
 
