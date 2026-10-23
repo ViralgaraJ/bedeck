@@ -18,6 +18,16 @@
                 @endif
             </span>
         </a>
+        {{-- Size the logo to the wordmark before first paint, so it never
+             renders at the fallback height and then jumps (site.js keeps it
+             in sync on resize / font load). --}}
+        <script>
+            (function () {
+                var c = document.querySelector('.brand-copy');
+                var h = c && c.getBoundingClientRect().height;
+                if (h > 0) document.documentElement.style.setProperty('--brand-logo-h', h + 'px');
+            })();
+        </script>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
             <span></span><span></span><span></span>
         </button>

@@ -588,7 +588,9 @@ p {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, .55);
   box-shadow: 0 6px 18px -6px rgba(0, 0, 0, .4), inset 0 1px 0 rgba(255, 255, 255, .65), 0 0 0 1px rgba(59, 130, 246, .12);
-  transition: height .1s, background .3s var(--ease), box-shadow .3s var(--ease);
+  /* No height transition: the size is set before first paint (inline
+     script in site-header.blade.php), so animating it only shows a jump. */
+  transition: background .3s var(--ease), box-shadow .3s var(--ease);
 }
 
 .brand img.brand-logo-img {
