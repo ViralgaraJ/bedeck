@@ -7,8 +7,10 @@
 deployment:
   tasks:
     - export PHP=/usr/local/bin/ea-php82
-    - export COMPOSER=/usr/local/bin/composer
-    - '"$COMPOSER" install --no-dev --optimize-autoloader --no-interaction --no-progress'
+    # Composer's path differs per host (not at /usr/local/bin on biz70); when it
+    # can't be found, skip install and keep the vendor/ already on the server.
+    - 'COMPOSER=$(command -v composer || command -v /opt/cpanel/composer/bin/composer || true)'
+    - 'if [ -n "$COMPOSER" ]; then "$COMPOSER" install --no-dev --optimize-autoloader --no-interaction --no-progress; else echo "composer not found - skipping install"; fi'
     - test -f .env || cp .env.example .env
     - '"$PHP" artisan storage:link || true'
     - '"$PHP" artisan migrate --force'
