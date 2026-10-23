@@ -1,6 +1,6 @@
 # Deploying Bedeck International to cPanel
 
-This is a standard **Laravel 12** application. It needs **PHP 8.2, 8.3 or 8.4** with the
+This is a standard **Laravel 12** application. It needs **PHP 8.3 (8.3.36 or newer — CVE-2026-109618/109619 fix)** with the
 extensions `bcmath, ctype, curl, dom, fileinfo, gd, mbstring, openssl, pdo_mysql, tokenizer, xml, zip`
 (all standard on modern cPanel/CloudLinux). No Node.js build step is required — the CSS/JS
 in `public/assets/` is plain, hand-written and committed.

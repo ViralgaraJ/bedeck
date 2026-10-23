@@ -6,7 +6,7 @@
 # otherwise the YAML parser rejects "$PHP" followed by bare text.
 deployment:
   tasks:
-    - export PHP=/usr/local/bin/ea-php82
+    - export PHP=/usr/local/bin/ea-php83
     # Composer's path differs per host (not at /usr/local/bin on biz70); when it
     # can't be found, skip install and keep the vendor/ already on the server.
     - 'COMPOSER=$(command -v composer || command -v /opt/cpanel/composer/bin/composer || true)'
